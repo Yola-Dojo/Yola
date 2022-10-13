@@ -14,7 +14,7 @@ function App() {
         <Route path={'/'} element={<Header  heading={projectName} />}></Route>
         <Route path={'/login'} element={<Header  heading={projectName} />}></Route>
         <Route path={'/products'} element={<Header heading={projectName}  />}></Route>
-        <Route path={'/checkout'} element={<Header eading1={projectName}  />}></Route>
+        <Route path={'/checkout'} element={<Header heading={projectName}  />}></Route>
         <Route path={'/admin'} element={<Header heading={`Welcome, ${user}`}  />}></Route>
       </Routes>
       <main>
