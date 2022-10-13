@@ -4,13 +4,18 @@ import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Header from './components/Header'
 
 function App() {
+
+  const projectName = 'Yola'
+  const user = 'User'
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={'/'} element={<Header />}></Route>
-        <Route path={'/products'} element={<Header />}></Route>
-        <Route path={'/checkout'} element={<Header />}></Route>
-        <Route path={'/admin'} element={<Header />}></Route>
+        <Route path={'/'} element={<Header  heading={projectName} />}></Route>
+        <Route path={'/login'} element={<Header  heading={projectName} />}></Route>
+        <Route path={'/products'} element={<Header heading={projectName}  />}></Route>
+        <Route path={'/checkout'} element={<Header eading1={projectName}  />}></Route>
+        <Route path={'/admin'} element={<Header heading={`Welcome, ${user}`}  />}></Route>
       </Routes>
       <main>
         <Routes>
