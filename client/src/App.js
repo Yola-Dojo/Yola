@@ -2,6 +2,7 @@ import './App.css';
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Header from './components/Header'
 import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
         <Routes>
           <Route path={'/'} element={null}></Route>
           <Route path={'/login'} element={<Login/>}></Route>
-          <Route path={'/register/consumer'} element={null}></Route>
+          <Route path={'/register'} element={<Register/>}></Route>
           <Route path={'/checkout'} element={null}></Route>
           <Route path={'/admin'} element={null}></Route>
           <Route path={'/admin/create'} element={null}></Route>
