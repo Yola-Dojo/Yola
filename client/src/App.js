@@ -1,7 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Header from './components/Header'
+import Login from './components/Login';
 
 function App() {
 
@@ -9,6 +9,7 @@ function App() {
   const user = 'User'
 
   return (
+
     <BrowserRouter>
       <Routes>
         <Route path={'/'} element={<Header  heading={projectName} />}></Route>
@@ -20,7 +21,7 @@ function App() {
       <main>
         <Routes>
           <Route path={'/'} element={null}></Route>
-          <Route path={'/login'} element={null}></Route>
+          <Route path={'/login'} element={<Login/>}></Route>
           <Route path={'/register/consumer'} element={null}></Route>
           <Route path={'/checkout'} element={null}></Route>
           <Route path={'/admin'} element={null}></Route>
