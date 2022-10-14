@@ -54,3 +54,42 @@ ul.inline li:last-child:after {
   height: 1em;
   vertical-align: middle
 }
+
+table {
+  width: 90%;
+  border: 1px solid #9d978c;
+  color: #0b0a09;
+  counter-reset: row-num -1;
+}
+table tr {
+  counter-increment: row-num;
+}
+table tr td:first-child::before {
+    content: counter(row-num) ". ";
+    padding: 15px;
+}
+.tableDiv {
+  background-color:lemonchiffon;
+  display: flex;
+  justify-content: center;
+  padding:30px;
+  border-radius: 15px;
+
+}
+.card{
+  border-radius:5px;
+  height:100px;
+  width:150px;
+  text-align:center;
+  margin:10px;
+  padding:20px;
+  color:rgb(237, 172, 7);
+  font-Size:20px;
+  font-weight: bold;
+  box-shadow:0px 2px 6px white, 0px 4px 6px rgba(240, 110, 4, 0.99);
+  
+}
+.card:hover{
+  box-shadow:0px 2px 7px white, 0px 4px 9px rgb(128, 128, 128);
+
+}
