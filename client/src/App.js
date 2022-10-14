@@ -1,14 +1,14 @@
-import './App.css';
+import './App.css'
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Header from './components/Header'
-import LandingPage from './components/LandingPage';
-import AddProduct from './components/AddProduct';
-import AdminProductsList from './components/AdminProductsList';
+import LandingPage from './components/LandingPage'
+import AddProduct from './components/AddProduct'
+import AdminProductsList from './components/AdminProductsList'
 import HeaderAdmin from './components/HeaderAdmin'
 import Login from './components/Login'
-import Nav from './components/Nav'
-import HeaderCheckout from './components/HeaderCheckout';
-import Register from './components/Register';
+import HeaderCheckout from './components/HeaderCheckout'
+import Register from './components/Register'
+import HeaderReg from './components/HeaderReg'
 import EditProduct from './components/EditProduct'
 
 
@@ -22,7 +22,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path={'/'} element={<Header heading={projectName} />} />
-        <Route path={'/login'} element={<Header heading={projectName} />} />
+        <Route path={'/login'} element={<HeaderReg heading={projectName} />} />
         <Route path={'/products'} element={<Header heading={projectName} />} />
         <Route path={'/checkout'} element={<HeaderCheckout heading={projectName} user={user} /> } />
         <Route path={'/admin'} element={<HeaderAdmin user={user} /> } />

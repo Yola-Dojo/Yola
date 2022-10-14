@@ -1,5 +1,5 @@
 import React from 'react'
-import OptionsAdmin from './OptionsAdmin'
+import LinksAdmin from './LinksAdmin'
 
 const HeaderAdmin = (props) => {
 
@@ -9,7 +9,7 @@ const HeaderAdmin = (props) => {
     <header>
       <h1>Yola</h1>
       <h1>Welcome, {user}</h1>
-      <OptionsAdmin />
+      <LinksAdmin />
     </header>
   )
 }

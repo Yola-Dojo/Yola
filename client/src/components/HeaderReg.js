@@ -1,6 +1,6 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import LinksNav from './LinksNav'
-import LinksOptions from './LinksOptions'
 
 const Header = (props) => {
 
@@ -8,11 +8,10 @@ const Header = (props) => {
 
   return (
     <header>
+    <h1><Link to='/' className='plain'>{heading}</Link></h1>
       <nav>
         <LinksNav />
       </nav>
-      <h1>{heading}</h1>
-      <LinksOptions />
     </header>
   )
 }
