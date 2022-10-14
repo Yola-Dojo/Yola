@@ -9,6 +9,7 @@ import Login from './components/Login'
 import HeaderCheckout from './components/HeaderCheckout'
 import Register from './components/Register'
 import HeaderReg from './components/HeaderReg'
+import EditProduct from './components/EditProduct'
 
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
           <Route path={'/checkout'} element={null}></Route>
           <Route path={'/admin'} element={<AdminProductsList/>}></Route>
           <Route path={'/admin/create'} element={<AddProduct />}></Route>
-          <Route path={'/admin/edit/:id'} element={null}></Route>
+          <Route path={'/admin/edit/:id'} element={<EditProduct />}></Route>
           <Route path={'/create'} element={null}></Route>
           <Route path={'/products'} element={null}></Route>
           <Route path={'/locations'} element={null}></Route>

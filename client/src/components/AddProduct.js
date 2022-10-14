@@ -4,54 +4,55 @@ import {useNavigate,Link} from 'react-router-dom'
 
 
 const AddProduct = (props) => {
-  const [productName,setProductName]=useState("")
-  const [productPrice,setProductPrice]=useState("")
-  const [productDescription,setProductDescription]=useState("")
-  const [productImg,setProductImg]=useState("")
-  const [errors,setErrors]= useState({})
-  const {loggedIn, setLoggedIn}= props
-  const navigate = useNavigate()
+    const [productName,setProductName]=useState("")
+    const [productPrice,setProductPrice]=useState("")
+    const [productDescription,setProductDescription]=useState("")
+    const [productImg,setProductImg]=useState("")
+    const [errors,setErrors]= useState({})
+    const {loggedIn, setLoggedIn}= props
+    const navigate = useNavigate()
 
-  const productNameHandler=(e)=>{
+
+    const productNameHandler=(e)=>{
+        setErrors("")
+        setProductName(e.target.value)
+    }
+
+    const productPriceHandler=(e)=>{
     setErrors("")
-    setProductName(e.target.value)
+    setProductPrice(e.target.value)
+    }
+    const productDescriptionHandelr=(e)=>{
+    setErrors("")
+    setProductDescription(e.target.value)
+    }
+    const ProductImgHandler=(e)=>{
+    setErrors("")
+    setProductImg(e.target.value)
+    }
+
+    const handleSubmit= (e)=>{
+    e.preventDefault()
+
+    const product = {
+        productName,
+        productPrice,
+        productDescription,
+        productImg,
+    }
+
+    axios.post("http://localhost:8000/api/products",product,{withCredentials:true})
+    .then((product)=>{
+        console.log(product)
+        navigate("/admin")
+    })
+    .catch((error)=>{
+        setErrors(error.response.data.errors)
+        console.log(error.response.data.errors)
+    })
 }
 
-const productPriceHandler=(e)=>{
-  setErrors("")
-  setProductPrice(e.target.value)
-}
-const productDescriptionHandelr=(e)=>{
-  setErrors("")
-  setProductDescription(e.target.value)
-}
-const ProductImgHandler=(e)=>{
-  setErrors("")
-  setProductImg(e.target.value)
-}
-
-const handleSubmit= (e)=>{
-  e.preventDefault()
-
-  const product = {
-      productName,
-      productPrice,
-      productDescription,
-      productImg,
-  }
-
-  axios.post("http://localhost:8000/api/products",product)
-  .then((product)=>{
-      console.log(product)
-      navigate("/")
-  })
-  .catch((error)=>{
-      setErrors(error.response.data.errors)
-      console.log(error.response.data.errors)
-  })
-}
-
-  return (
+    return (
     <div>
     <div className="container">
         <div className="">
@@ -72,25 +73,25 @@ const handleSubmit= (e)=>{
                     <div className="">
                         <label className="">Product Name:
                             {errors.productName ? <p>{errors.productName.message}</p>:null}
-                            <input className="" type="text" onChange = {productNameHandler} name="" id="" value={productName} />
+                            <input className="" type="text" onChange = {productNameHandler} name="" id=""  />
                         </label>
                     </div>
                     <div className="">
                         <label className="">Product Price:
                             {errors.productPrice ? <p>{errors.productPrice.message}</p>:null}
-                            <input className=""  type="text" onChange = {productPriceHandler} name="" id="" value={productPrice} />
+                            <input className=""  type="text" onChange = {productPriceHandler} name="" id=""  />
                         </label>
                     </div>
                     <div className="">   
                         <label className="">Product Image:
                             {errors.productImg ? <p>{errors.productImg.message}</p>:null}
-                            <input className="" type="text" label="Type" onChange={ProductImgHandler} value={productImg} />
+                            <input className="" type="text" label="Type" onChange={ProductImgHandler}  />
                         </label>
-                      </div>    
+                    </div>    
                     <div className=""> 
                         <label className="">Product Description:
                             {errors.productDescription ? <p>{errors.productDescription.message}</p>:null}
-                            <textarea className="" type="text" label="Type" onChange={productDescriptionHandelr} value={productDescription}></textarea>
+                            <textarea className="" type="text" label="Type" onChange={productDescriptionHandelr} ></textarea>
                         </label>
                     </div> 
                     </div>     
@@ -103,7 +104,7 @@ const handleSubmit= (e)=>{
         </div>
     </div>
 </div>
-  )
+)
 }
 
 export default AddProduct
