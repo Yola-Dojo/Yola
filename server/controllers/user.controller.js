@@ -87,6 +87,17 @@ const UserController = {
             .catch((err)=>{
                 console.log(err)
             })
+    },
+    //Get All Users
+    getAllUsers: (req, res) => {
+        User.find({})
+        .then((users)=>{
+            res.status(200).json({users:users})
+        })
+        .catch((err)=> {
+            res.status(500).json({message:"Somthing Went Wrong!",error:err})
+        })
+
     }
 
 
