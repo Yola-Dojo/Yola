@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 const Register = () => {
 
@@ -9,7 +10,7 @@ const Register = () => {
     const [user, setUser] = useState({
         firstName:"",
         lastName:"",
-        username: "",
+        companyName: "",
         email: "",
         password: "",
         confirmPassword: ""
@@ -50,6 +51,8 @@ const Register = () => {
     }
   return (
     <div>
+        <h2>Sign Up</h2>
+        <p style={{fontStyle:'italic', fontSize:'12px'}}>Please fill in this form to create an account</p>
       {confirmReg ? <h4 style={{color: 'green'}}>{confirmReg}</h4> : null}
       <form onSubmit={register}>
         {errors.firstName ? (<span className='error-text'>{errors.firstName.message}</span>) : null}
@@ -67,6 +70,14 @@ const Register = () => {
         type='text'
         name='lastName'
         value={user.lastName}
+        onChange={(e)=> handleChange(e)}
+        />
+
+        <input
+        placeholder='Company name (optional)'
+        type='text'
+        name='companyName'
+        value={user.companyName}
         onChange={(e)=> handleChange(e)}
         />
 
@@ -99,6 +110,7 @@ const Register = () => {
 
         <button>Sign Up</button>
       </form>
+      <p>Already have an account?<Link to = {'/login'}>Login here.</Link></p>
     </div>
   )
 }
