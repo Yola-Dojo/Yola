@@ -1,3 +1,4 @@
+
 * {box-sizing: border-box}
 
 html {
@@ -38,6 +39,7 @@ ul.inline li {
 ul.inline li:after {
   content: '|';
   padding-left: var(--li-space)
+
 }
 
 ul.inline li:first-child {
