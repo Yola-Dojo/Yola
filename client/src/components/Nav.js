@@ -6,10 +6,10 @@ const Nav = (props) => {
 
   //this list to be set by conditional after reading current URL path to hide any <li>s that don't need to be shown
   const linkList = [
-    <li><Link to='/locations'>Store Locator</Link></li>,
-    <li><Link to='/products'>Shop</Link></li>,
-    <li><Link to='/about'>About</Link></li>,
-    <li><Link to='/contact'>Contact Us</Link></li>
+    <li key='1'><Link to='/locations'>Store Locator</Link></li>,
+    <li key='2'><Link to='/products'>Shop</Link></li>,
+    <li key='3'><Link to='/about'>About</Link></li>,
+    <li key='4'><Link to='/contact'>Contact Us</Link></li>
   ]
 
   return (
