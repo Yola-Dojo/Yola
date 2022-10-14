@@ -1,7 +1,7 @@
 import './App.css';
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Header from './components/Header'
-
+import LandingPage from './components/LandingPage';
 import AddProduct from './components/AddProduct';
 import AdminProductsList from './components/AdminProductsList';
 import HeaderAdmin from './components/HeaderAdmin'
@@ -32,7 +32,7 @@ function App() {
       </Routes>
       <main>
         <Routes>
-          <Route path={'/'} element={null}></Route>
+          <Route path={'/'} element={<LandingPage/>}></Route>
           <Route path={'/login'} element={<Login/>}></Route>
           <Route path={'/register'} element={<Register/>}></Route>
           <Route path={'/checkout'} element={null}></Route>
