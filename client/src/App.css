@@ -55,29 +55,39 @@ ul.inline li:last-child:after {
   vertical-align: middle
 }
 
-/* need to make responsive below ------------------ */
-.login-form {
+/* need to make responsive below -------------------------------------- */
+
+.login-form { /* components/Login.js*/
   display: flex;
   justify-content: space-around;
 }
 
-.reg-form {
+.reg-form { /* components/Register.js*/
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.reg-top {
+.reg-top { /* components/Register.js*/
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
 }
 
-.reg-bottom {
+.reg-bottom { /* components/Register.js*/
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 150px;
 }
-/* need to make responsive above --------------------- */
+
+.landingPage { /* components/LandingPage.js*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 125px;
+}
+
+/* need to make responsive above -------------------------------------- */
