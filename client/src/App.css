@@ -1,13 +1,56 @@
-.register-form {
-  border: 2px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  width: 800px;
+
+* {box-sizing: border-box}
+
+html {
+  --page-width: 880px
 }
 
-.mid-reg-form {
+header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  max-width: var(--page-width);
+  margin-inline: auto
+}
 
+main {
+  width: 100%;
+  max-width: var(--page-width);
+  margin-inline: auto
+}
+
+h1 {
+  margin-block: 0
+}
+
+ul.inline {
+  list-style-type: none;
+  padding-left: 0;
+  --li-space: 0.5em
+}
+
+ul.inline li {
+  display: inline;
+  margin-left: var(--li-space)
+}
+
+
+ul.inline li:after {
+  content: '|';
+  padding-left: var(--li-space)
+
+}
+
+ul.inline li:first-child {
+  margin-left: 0
+}
+
+ul.inline li:last-child:after {
+  content: ''
+}
+
+.cartIcon {
+  height: 1em;
+  vertical-align: middle
 }

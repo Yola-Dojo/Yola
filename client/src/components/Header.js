@@ -1,4 +1,6 @@
 import React from 'react'
+import Nav from './Nav'
+import OptionsUser from './OptionsUser'
 
 const Header = (props) => {
 
@@ -6,7 +8,9 @@ const Header = (props) => {
 
   return (
     <header>
+      <Nav />
       <h1>{heading}</h1>
+      <OptionsUser />
     </header>
   )
 }
