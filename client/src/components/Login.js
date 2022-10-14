@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 
 const Login = () => {
 
@@ -33,33 +33,40 @@ const Login = () => {
 
 //waiting to agree on CSS styling ..
   return (
-    <div>
-        <p className='error-text'>{errorMessage ? errorMessage:""}</p>
-        <form onSubmit={login}>
-            <div> 
-                <input
-                placeholder='Email Address'
-                type="text"
-                name='email'
-                value={email}
-                onChange={(e)=> setEmail(e.target.value)}
-                />
-            </div>
-            <div>
-                <input 
+    <div className='login-form'>
+        <div>
+            <h2>Login to Your Account</h2>
+            <p className='error-text'>{errorMessage ? errorMessage:""}</p>
+            <form onSubmit={login}>
+                <div> 
+                    <input
+                    placeholder='Email Address'
+                    type="text"
+                    name='email'
+                    value={email}
+                    onChange={(e)=> setEmail(e.target.value)}
+                    />
+                </div>
+                <div>
+                    <input 
+                    placeholder='Password'
+                    type='password'
+                    name='password'
+                    value={password}
+                    onChange={(e)=> setPassword(e.target.value)}
+                    />
+                </div>
+                <div>
+                    <button style={{cursor:'pointer'}}>Sign in</button>
+                </div>
+            </form>
+        </div>
 
-                placeholder='Password'
-                type='password'
-                name='password'
-                value={password}
-                onChange={(e)=> setPassword(e.target.value)}
-                />
-            </div>
-            <div>
-                <button>Sign in</button>
-            </div>
-
-        </form>
+        <div>
+            <h2>New Here?</h2>
+            <p>Sign up to get started</p>
+            <Link to ={'/register'}><button style={{cursor:'pointer'}}>Sign Up</button></Link>
+        </div>
     </div>
   )
 }
