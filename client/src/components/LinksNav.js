@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const LinksOptions = () => {
+const LinksNav = () => {
   return (
     <ul className='inline'>
       <li><Link to='/locations'>Store Locator</Link></li>
@@ -12,4 +12,4 @@ const LinksOptions = () => {
   )
 }
 
-export default LinksOptions
+export default LinksNav

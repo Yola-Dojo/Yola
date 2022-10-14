@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const LinksOptions = () => {
+const LinksAdmin = () => {
   return (
     <ul className='inline'>
       <li><Link to='/admin/create'>Create Product</Link></li>
@@ -11,4 +11,4 @@ const LinksOptions = () => {
   )
 }
 
-export default LinksOptions
+export default LinksAdmin
