@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+
+* {box-sizing: border-box}
+
+html {
+  --page-width: 880px
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  max-width: var(--page-width);
+  margin-inline: auto
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  width: 100%;
+  max-width: var(--page-width);
+  margin-inline: auto
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  margin-block: 0
+}
+
+ul.inline {
+  list-style-type: none;
+  padding-left: 0;
+  --li-space: 0.5em
+}
+
+ul.inline li {
+  display: inline;
+  margin-left: var(--li-space)
+}
+
+
+ul.inline li:after {
+  content: '|';
+  padding-left: var(--li-space)
+
+}
+
+ul.inline li:first-child {
+  margin-left: 0
+}
+
+ul.inline li:last-child:after {
+  content: ''
+}
+
+.cartIcon {
+  height: 1em;
+  vertical-align: middle
 }
