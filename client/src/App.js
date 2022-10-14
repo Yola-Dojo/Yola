@@ -2,6 +2,8 @@ import './App.css';
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Header from './components/Header'
 import Login from './components/Login';
+import AddProduct from './components/AddProduct';
+import AdminProductsList from './components/AdminProductsList';
 
 function App() {
 
@@ -24,8 +26,8 @@ function App() {
           <Route path={'/login'} element={<Login/>}></Route>
           <Route path={'/register/consumer'} element={null}></Route>
           <Route path={'/checkout'} element={null}></Route>
-          <Route path={'/admin'} element={null}></Route>
-          <Route path={'/admin/create'} element={null}></Route>
+          <Route path={'/admin'} element={<AdminProductsList/>}></Route>
+          <Route path={'/admin/create'} element={<AddProduct />}></Route>
           <Route path={'/admin/edit/:id'} element={null}></Route>
           <Route path={'/create'} element={null}></Route>
           <Route path={'/products'} element={null}></Route>

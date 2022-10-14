@@ -19,6 +19,10 @@ const ProductSchema = new mongoose.Schema({
     createdBy: { //added for LR
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
+    },
+    productImg: {
+        type:String,
+        required: [true, "Product Image is required"],
     }
 
 }, {timestamps:true})
