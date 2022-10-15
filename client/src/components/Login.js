@@ -1,12 +1,16 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import {useNavigate, Link} from 'react-router-dom'
+import Register from './Register'
 
 const Login = () => {
 
     const [email, setEmail] = useState("")
     const [password,setPassword] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
+
+    const openDialog = () => {document.getElementById('regDialog').showModal()}
+    const closeDialog = () => {document.getElementById('regDialog').close()}
     
     const navigate = useNavigate()
 
@@ -65,7 +69,7 @@ const Login = () => {
         <div>
             <h2>New Here?</h2>
             <p>Sign up to get started</p>
-            <Link to ={'/register'}><button type='submit'>Sign Up</button></Link>
+            <button type='submit'>Sign Up</button>
         </div>
     </div>
   )
