@@ -1,5 +1,5 @@
 import './App.css'
-import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Header from './components/Header'
 import LandingPage from './components/LandingPage'
 import AddProduct from './components/AddProduct'
