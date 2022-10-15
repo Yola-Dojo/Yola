@@ -140,6 +140,37 @@ ul.inline button.link {
   width: var(--logoWidth);
   margin-bottom: 20px
 }
+label {
+  display: block;
+  font-weight: 500;
+  color: #E7E9EC;
+  font-size: 2rem;
+  line-height: 1.25rem;
+  margin-bottom: 8px
+}
+
+input {
+  border: 1px solid rgb(209 213 219);
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-top: 24px
+}
+
+button[type='submit'] {
+  background-color: rgb(79, 70, 229);
+  border-radius: 6px;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 2rem;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  margin-top: 24px
+}
+
+button[type='submit']:hover {
+  background-color: rgb(99 102 241)
+}
 
 dialog {
   padding-block: 3rem;
@@ -188,8 +219,6 @@ dialog button.closer {
 .reg-bottom { /* components/Register.js*/
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 150px;
 }
 
 .landingPage { /* components/LandingPage.js*/
