@@ -9,7 +9,7 @@ const Header = (props) => {
   return (
     <header>
       <nav>
-        <LinksNav />garbage 2
+        <LinksNav />garbage 5
       </nav>
       <h1>{heading}</h1>
       <LinksOptions />
