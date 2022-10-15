@@ -14,21 +14,20 @@ import EditProduct from './components/EditProduct'
 
 function App() {
 
-  const projectName = 'Yola'
   const user = 'User'
 
   return (
 
     <BrowserRouter>
       <Routes>
-        <Route path={'/'} element={<Header heading={projectName} />} />
-        <Route path={'/login'} element={<HeaderReg heading={projectName} />} />
-        <Route path={'/products'} element={<Header heading={projectName} />} />
-        <Route path={'/checkout'} element={<HeaderCheckout heading={projectName} user={user} /> } />
+        <Route path={'/'} element={<Header />} />
+        <Route path={'/login'} element={<HeaderReg />} />
+        <Route path={'/products'} element={<Header />} />
+        <Route path={'/checkout'} element={<HeaderCheckout user={user} /> } />
         <Route path={'/admin'} element={<HeaderAdmin user={user} /> } />
-        <Route path={'/locations'} element={<Header heading={projectName} /> } />
-        <Route path={'/about'} element={<Header heading={projectName} /> } />
-        <Route path={'/contact'} element={<Header heading={projectName} /> } />
+        <Route path={'/locations'} element={<Header /> } />
+        <Route path={'/about'} element={<Header /> } />
+        <Route path={'/contact'} element={<Header /> } />
       </Routes>
       <main>
         <Routes>

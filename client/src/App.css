@@ -1,42 +1,98 @@
 
-* {box-sizing: border-box}
+* {
+  box-sizing: border-box;
+  font-family: 'Avro', 'Open Sans', sans-serif;
+  --fw-normal: 400;
+  --fw-heavy: 700;
+  --colorAcc: #c4578e
+}
 
 html {
-  --page-width: 880px
+  font-size: 10px;
+  --screen-pad: 5vw;
+  --logoWidth: clamp(200px, 30vw, 500px)
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: 33vw;
+  grid-auto-rows: max-content;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   width: 100%;
-  max-width: var(--page-width);
-  margin-inline: auto
+  padding-block: 20px;
+  padding-inline: var(--screen-pad);
+  background-color: #f9f9f9
+}
+
+@media only screen and (max-width : 874px) {
+
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 {
+    order: 1;
+    align-self: center
+  }
+
+  nav {order: 2}
+  ul.inline.stageRight {order: 3}
+
 }
 
 main {
   width: 100%;
-  max-width: var(--page-width);
-  margin-inline: auto
+  padding-block: 20px;
+  padding-inline: var(--screen-pad);
 }
 
 h1 {
-  margin-block: 0
+  margin-block: 0;
+  grid-row-start: 1;
+  grid-column-start: 2
 }
 
 h1 a {
   text-decoration: none
 }
 
+p, li {
+  font-size: 1.8rem;
+  font-weight: var(--fw-normal);
+  line-height: 3.2rem
+}
+
+span.welcome {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  font-size: 2rem;
+  font-weight: var(--fw-heavy)
+}
+
+nav {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2
+}
+
 ul.inline {
   list-style-type: none;
   padding-left: 0;
-  --li-space: 0.5em
+  --li-space: 0.5em;
+  margin: 0
+}
+
+ul.inline.stageRight {
+  grid-column-start: 3;
+  grid-row-start: 2
 }
 
 ul.inline li {
   display: inline;
-  margin-left: var(--li-space)
+  margin-left: var(--li-space);
+  font-size: clamp(1rem, 2vw, 1.6rem)
 }
 
 
@@ -54,9 +110,23 @@ ul.inline li:last-child:after {
   content: ''
 }
 
+ul.inline a {
+  color: var(--colorAcc);
+  letter-spacing: 0.4ch;
+}
+
+.noWrap {
+  white-space: nowrap;
+}
+
 .cartIcon {
   height: 1em;
   vertical-align: middle
+}
+
+.logo {
+  width: var(--logoWidth);
+  margin-bottom: 20px
 }
 
 /* need to make responsive below -------------------------------------- */

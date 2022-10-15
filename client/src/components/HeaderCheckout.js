@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Logo from './Logo'
 
 const HeaderCheckout = (props) => {
 
@@ -8,7 +9,7 @@ const HeaderCheckout = (props) => {
   return (
     <header>
       <Link to='/'>Continue Shopping</Link>
-      <h1>{heading}</h1>
+      <h1><Link to='/' className='plain'><Logo /></Link></h1>
       <span>Welcome, {user}</span>
     </header>
   )

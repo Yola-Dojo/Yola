@@ -1,5 +1,7 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import LinksAdmin from './LinksAdmin'
+import Logo from './Logo'
 
 const HeaderAdmin = (props) => {
 
@@ -7,8 +9,12 @@ const HeaderAdmin = (props) => {
 
   return (
     <header>
-      <h1>Yola</h1>
-      <h1>Welcome, {user}</h1>
+      <h1>
+        <Link to='/'>
+          <Logo />
+        </Link>
+      </h1>
+      <span className='welcome'>Welcome, {user}</span>
       <LinksAdmin />
     </header>
   )
