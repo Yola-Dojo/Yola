@@ -165,7 +165,8 @@ button[type='submit'] {
   line-height: 2rem;
   border: none;
   padding: 0.8rem 1.2rem;
-  margin-top: 24px
+  margin-top: 24px;
+  cursor: pointer
 }
 
 button[type='submit']:hover {
@@ -196,12 +197,28 @@ dialog button.closer {
   color: lightgray
 }
 
-/* need to make responsive below -------------------------------------- */
-
 .login-form { /* components/Login.js*/
   display: flex;
   justify-content: space-around;
 }
+
+@media only screen and (max-width : 550px) {
+  .login-form {
+    display: block
+  }
+  .login-form > div {
+    margin-top: 48px;
+    margin-bottom: 48px
+  }
+  .login-form > div:first-child {
+    margin-top: 0
+  }
+  .login-form > div:last-child {
+    margin-bottom: 0
+  }
+}
+
+/* need to make responsive below -------------------------------------- */
 
 .reg-form { /* components/Register.js*/
   display: flex;
