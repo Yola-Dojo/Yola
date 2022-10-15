@@ -57,7 +57,7 @@ const Login = () => {
                     />
                 </div>
                 <div>
-                    <button style={{cursor:'pointer'}}>Sign in</button>
+                    <button type='submit'>Sign in</button>
                 </div>
             </form>
         </div>
@@ -65,7 +65,7 @@ const Login = () => {
         <div>
             <h2>New Here?</h2>
             <p>Sign up to get started</p>
-            <Link to ={'/register'}><button style={{cursor:'pointer'}}>Sign Up</button></Link>
+            <Link to ={'/register'}><button type='submit'>Sign Up</button></Link>
         </div>
     </div>
   )
