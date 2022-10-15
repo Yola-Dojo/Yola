@@ -10,6 +10,8 @@ import HeaderCheckout from './components/HeaderCheckout'
 import Register from './components/Register'
 import HeaderReg from './components/HeaderReg'
 import EditProduct from './components/EditProduct'
+import Contact from './components/Contact'
+
 
 
 function App() {
@@ -43,7 +45,7 @@ function App() {
           <Route path={'/products'} element={null}></Route>
           <Route path={'/locations'} element={null}></Route>
           <Route path={'/about'} element={null}></Route>
-          <Route path={'/contact'} element={null}></Route>
+          <Route path={'/contact'} element={<Contact />}></Route>
         </Routes>
       </main>
     </BrowserRouter>
