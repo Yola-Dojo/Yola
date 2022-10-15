@@ -9,7 +9,7 @@ const HeaderCheckout = (props) => {
   return (
     <header>
       <Link to='/'>Continue Shopping</Link>
-      <h1><Link to='/' className='plain'><Logo /></Link></h1>
+      <h1><Logo /></h1>
       <span>Welcome, {user}</span>
     </header>
   )
