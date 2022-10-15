@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-import {useNavigate, Link} from 'react-router-dom'
 import Register from './Register'
 
 const Login = () => {
@@ -10,9 +9,6 @@ const Login = () => {
     const [errorMessage, setErrorMessage] = useState("")
 
     const openDialog = () => {document.getElementById('regDialog').showModal()}
-    const closeDialog = () => {document.getElementById('regDialog').close()}
-    
-    const navigate = useNavigate()
 
     const login = (event)=>{
         event.preventDefault()
@@ -37,6 +33,7 @@ const Login = () => {
 
 //waiting to agree on CSS styling ..
   return (
+    <>
     <div className='login-form'>
         <div>
             <h2>Login to Your Account</h2>
@@ -69,9 +66,11 @@ const Login = () => {
         <div>
             <h2>New Here?</h2>
             <p>Sign up to get started</p>
-            <button type='submit'>Sign Up</button>
+            <button type='submit' onClick={openDialog}>Sign Up</button>
         </div>
     </div>
+    <Register />
+    </>
   )
 }
 

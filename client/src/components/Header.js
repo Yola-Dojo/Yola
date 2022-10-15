@@ -5,8 +5,6 @@ import Logo from './Logo'
 
 const Header = (props) => {
 
-  const {heading} = props
-
   return (
     <header>
       <nav>
