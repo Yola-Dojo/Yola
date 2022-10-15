@@ -7,7 +7,6 @@ import AdminProductsList from './components/AdminProductsList'
 import HeaderAdmin from './components/HeaderAdmin'
 import Login from './components/Login'
 import HeaderCheckout from './components/HeaderCheckout'
-import Register from './components/Register'
 import HeaderReg from './components/HeaderReg'
 import EditProduct from './components/EditProduct'
 
@@ -33,7 +32,6 @@ function App() {
         <Routes>
           <Route path={'/'} element={<LandingPage/>}></Route>
           <Route path={'/login'} element={<Login/>}></Route>
-          <Route path={'/register'} element={<Register/>}></Route>
           <Route path={'/checkout'} element={null}></Route>
           <Route path={'/admin'} element={<AdminProductsList/>}></Route>
           <Route path={'/admin/create'} element={<AddProduct />}></Route>
