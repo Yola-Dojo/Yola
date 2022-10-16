@@ -7,6 +7,7 @@ const Contact = () => {
 
   const [custName,setCustName] = useState("")
   const [custEmail,setCustEmail] = useState("")
+  const [custLocation,setCustLocation] = useState("")
   const [custConcerns,setCustConcerns] = useState("")
   const [errors,setErrors] = useState({})
   const [user, setUser] = useState({})
@@ -53,6 +54,11 @@ const logout = (e)=>{
     setCustEmail(e.target.value)
   }
 
+  const locationHandle = (e)=>{
+    setErrors("")
+    setCustLocation(e.target.value)
+  }
+
   const concernsHandle = (e)=>{
     setErrors("")
     setCustConcerns(e.target.value)
@@ -64,6 +70,7 @@ const logout = (e)=>{
     const feedback = {
       custName,
       custEmail,
+      custLocation,
       custConcerns
     }
     axios.post("http://localhost:8000/api/feedbacks", feedback, {withCredentials:true})
@@ -123,10 +130,18 @@ const logout = (e)=>{
               onChange={emailHandle}
               />
 
+              <input
+              placeholder='Where are you from?'
+              name='custLocation'
+              type='text'
+              value={custLocation}
+              onChange={locationHandle}
+              />
+
               <textarea 
               rows='5' cols='40'
               name = 'message'
-              placeholder='Enter questions and/or concerns'
+              placeholder='Questions? Comments? Concerns?'
               value={custConcerns}
               onChange={concernsHandle}
               ></textarea>
