@@ -288,6 +288,7 @@ table-1 tr td:first-child::before {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
 
 .contact-container { /* components/Contact.js*/
   display: flex;

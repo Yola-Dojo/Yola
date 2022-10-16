@@ -8,7 +8,7 @@ import AdminProductsList from './components/AdminProductsList'
 import HeaderAdmin from './components/HeaderAdmin'
 import Login from './components/Login'
 
-import Nav from './components/Nav'
+// import Nav from './components/Nav'
 import HeaderCheckout from './components/HeaderCheckout'
 import HeaderReg from './components/HeaderReg'
 import EditProduct from './components/EditProduct'
