@@ -1,15 +1,24 @@
 import React, { useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
+import axios from 'axios'
 
 const LinksAdmin = (props) => {
 
   const {user, setUser} = props
   const navigate = useNavigate()
 
-  const handleLogout = () => {
-    //do we need to destroy the auth cookie here? -Bryan
-    setUser('')
-    navigate('/login')
+  const handleLogout = (e)=>{
+    axios.post("http://localhost:8000/api/users/logout",
+    {}, 
+    {withCredentials:true})
+    .then((res)=>{
+        console.log(res)
+        console.log(res.data)
+        navigate("/")
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
   }
 
 
