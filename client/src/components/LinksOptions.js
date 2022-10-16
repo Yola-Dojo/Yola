@@ -12,7 +12,7 @@ const LinksOptions = () => {
       <ul className='inline stageRight'>
         <li><Link to='/login' className='noWrap'>Sign in</Link></li>
         <li><button className='link' onClick={openDialog}>Register</button></li>
-        <li><Link to='/'><img src={CartIcon} className='cartIcon' alt='Your Shopping Cart' /></Link></li>
+        <li><Link to='/checkout'><img src={CartIcon} className='cartIcon' alt='Your Shopping Cart' /></Link></li>
       </ul>
       <Register/>
     </>
