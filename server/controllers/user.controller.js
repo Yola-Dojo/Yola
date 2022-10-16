@@ -49,7 +49,8 @@ const UserController = {
                                 ).json({
                                     message: "Succesfully",
                                     userLoggedIn: userRecord.username,
-                                    userId: userRecord._id
+                                    userId: userRecord._id,
+                                    firstName: userRecord.firstName
                                 });
                             }
                             else{

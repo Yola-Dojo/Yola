@@ -1,4 +1,5 @@
 import './App.css'
+import { useState } from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Header from './components/Header'
 import LandingPage from './components/LandingPage'
@@ -14,7 +15,7 @@ import Contact from './components/Contact'
 
 function App() {
 
-  const user = 'User'
+  const [user, setUser] = useState('')
 
   return (
 
@@ -24,7 +25,7 @@ function App() {
         <Route path={'/login'} element={<HeaderReg />} />
         <Route path={'/products'} element={<Header />} />
         <Route path={'/checkout'} element={<HeaderCheckout user={user} /> } />
-        <Route path={'/admin'} element={<HeaderAdmin user={user} /> } />
+        <Route path={'/admin'} element={<HeaderAdmin user={user} setUser={setUser} /> } />
         <Route path={'/locations'} element={<Header /> } />
         <Route path={'/about'} element={<Header /> } />
         <Route path={'/contact'} element={<Header /> } />
@@ -32,7 +33,7 @@ function App() {
       <main>
         <Routes>
           <Route path={'/'} element={<LandingPage/>}></Route>
-          <Route path={'/login'} element={<Login/>}></Route>
+          <Route path={'/login'} element={<Login user={user} setUser={setUser} />}></Route>
           <Route path={'/checkout'} element={null}></Route>
           <Route path={'/admin'} element={<AdminProductsList/>}></Route>
           <Route path={'/admin/create'} element={<AddProduct />}></Route>
