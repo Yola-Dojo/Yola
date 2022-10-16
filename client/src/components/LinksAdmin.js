@@ -14,6 +14,7 @@ const LinksAdmin = (props) => {
     .then((res)=>{
         console.log(res)
         console.log(res.data)
+        setUser('')
         navigate("/")
     })
     .catch((err)=>{
