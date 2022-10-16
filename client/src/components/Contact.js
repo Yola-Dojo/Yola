@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, {useRef,useState, useEffect} from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
 
@@ -9,6 +10,11 @@ const Contact = () => {
   const [custConcerns,setCustConcerns] = useState("")
   const [errors,setErrors] = useState({})
   const [user, setUser] = useState({})
+
+  const form = useRef()
+  const SERVICE_ID = 'service_lac4n1r'
+  const TEMPLATE_ID = "template_ss714zx"
+  const PUBLIC_KEY = "rT9ADbm8dtXn-_HiW"
 
   const navigate = useNavigate()
 
@@ -63,11 +69,29 @@ const logout = (e)=>{
     axios.post("http://localhost:8000/api/feedbacks", feedback, {withCredentials:true})
     .then((feedback)=>{
       console.log(feedback)
-      navigate('/contact')
     })
     .catch((err)=>{
       setErrors(err.response.data.error.errors)
     })
+
+    emailjs
+    .sendForm(
+      SERVICE_ID,
+      TEMPLATE_ID,
+      form.current,
+      PUBLIC_KEY
+    )
+    .then(
+      (res) => {
+        console.log(res.text)
+        console.log("msg sent")
+      },
+      (err) => {
+        console.log(err.text)
+      }
+    )
+  e.target.reset()
+
   }
 
 
@@ -81,7 +105,7 @@ const logout = (e)=>{
             <h2>Contact us</h2>
             <p style={{wordWrap:'break-word'}}>sfjsjfs jflkjsiewf wfsklflwe wefjdfdsjfjk dsfjkdsjjkdsjfksdj sfjsjfs jflkjsiewf wfsklflwe wefjdfdsjfjk dsfjkdsjjkdsjfksdj sfjsjfs jflkjsiewf wfsklflwe wefjdfdsjfjk dsfjkdsjjkdsjfksdj sfjsjfs jflkjsiewf wfsklflwe wefjdfdsjfjk dsfjkdsjjkdsjfksdj sfjsjfs jflkjsiewf wfsklflwe wefjdfdsjfjk dsfjkdsjjkdsjfksdj sfjsjfs jflkjsiewf wfsklflwe wefjdfdsjfjk dsfjkdsjjkdsjfksdj </p>
         </div>
-        <form className='contact-form' onSubmit={submitHandle}>
+        <form ref={form} className='contact-form' onSubmit={submitHandle}>
           <div className='right-col'>
               <input
               placeholder='Name'
@@ -101,6 +125,7 @@ const logout = (e)=>{
 
               <textarea 
               rows='5' cols='40'
+              name = 'message'
               placeholder='Enter questions and/or concerns'
               value={custConcerns}
               onChange={concernsHandle}
