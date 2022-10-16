@@ -1,12 +1,17 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import Register from './Register'
+import {useNavigate} from 'react-router-dom'
 
-const Login = () => {
+const Login = (props) => {
 
     const [email, setEmail] = useState("")
     const [password,setPassword] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
+
+    const navigate = useNavigate()
+
+    const {user, setUser} = props
 
     const openDialog = () => {document.getElementById('regDialog').showModal()}
 
@@ -21,9 +26,11 @@ const Login = () => {
             withCredentials: true
         })
         .then((res)=>{
+            const userName = res.data.firstName
+            setUser(userName)
             console.log(res, "res")
             console.log(res.data, "is res data!")
-            // navigate("") waiting for location to navigate to
+            navigate('/products')
         })
         .catch((err)=>{
             console.log(err.response.data)
