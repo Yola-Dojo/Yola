@@ -1,9 +1,14 @@
 import React from 'react'
+import Map from './Map.js'
 
 const Locations = () => {
   return (
     
-    <h2>Locations component</h2>
+    
+    <div>
+      <h2>Locations component</h2>
+      <Map/>
+    </div>
   )
 }
 
