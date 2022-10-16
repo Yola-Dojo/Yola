@@ -26,8 +26,9 @@ const LinksAdmin = (props) => {
   return (
     <ul className='inline stageRight'>
       <li><Link to='/admin/create' className='noWrap'>Create Product</Link></li>
-      <li><button className='link' onClick={handleLogout}>Logout</button></li>
       <li><Link to='/admin'>Home</Link></li>
+      <li><Link to='/inbox'>Inbox</Link></li>
+      <li><button className='link' onClick={handleLogout}>Logout</button></li>
     </ul>
   )
 }

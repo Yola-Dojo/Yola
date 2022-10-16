@@ -10,6 +10,10 @@ const FeedbackSchema = new mongoose.Schema({
         type:String,
         required:[true, "Email is required"]
     },
+    custLocation: {
+        type:String,
+        required:[true, "Location is required"]
+    },
     custConcerns: {
         type:String,
         required:[true, "Questions/Concerns is required"],
