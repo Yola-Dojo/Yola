@@ -32,7 +32,7 @@ const Login = () => {
     }
 
 //waiting to agree on CSS styling ..
-  return (
+return (
     <div className='login-form'>
         <div>
             <h2>Login to Your Account</h2>

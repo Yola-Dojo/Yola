@@ -9,7 +9,9 @@ import Login from './components/Login'
 import Nav from './components/Nav'
 import HeaderCheckout from './components/HeaderCheckout';
 import Register from './components/Register';
-import EditProduct from './components/EditProduct'
+import EditProduct from './components/EditProduct';
+import Products from './components/Products';
+import Checkout from './components/Checkout';
 
 
 function App() {
@@ -35,12 +37,12 @@ function App() {
           <Route path={'/'} element={<LandingPage/>}></Route>
           <Route path={'/login'} element={<Login/>}></Route>
           <Route path={'/register'} element={<Register/>}></Route>
-          <Route path={'/checkout'} element={null}></Route>
+          <Route path={'/checkout'} element={<Checkout />}></Route>
           <Route path={'/admin'} element={<AdminProductsList/>}></Route>
           <Route path={'/admin/create'} element={<AddProduct />}></Route>
           <Route path={'/admin/edit/:id'} element={<EditProduct />}></Route>
           <Route path={'/create'} element={null}></Route>
-          <Route path={'/products'} element={null}></Route>
+          <Route path={'/products'} element={<Products />}></Route>
           <Route path={'/locations'} element={null}></Route>
           <Route path={'/about'} element={null}></Route>
           <Route path={'/contact'} element={null}></Route>
