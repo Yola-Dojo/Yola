@@ -9,7 +9,7 @@ const HeaderAdmin = (props) => {
   return (
     <header>
       <h1><Logo /></h1>
-      <span className='welcome'>Welcome, {user}</span>
+      {user !== '' ? <span className='welcome'>Welcome, {user}</span> : null }
       <LinksAdmin user={user} setUser={setUser} />
     </header>
   )
