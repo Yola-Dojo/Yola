@@ -67,13 +67,12 @@ const AdminProductsList = (props) => {
             })
             .catch((err) => console.log(err))
     }
-
 return (
     <div className="container">
             <h2> ALL ORDERS</h2>    
         <div className="tableDiv">
-            <table >
-                <tbody className="">
+            <table className="table-1">
+                <tbody >
                     <tr>
                         <th>PRODUCT NAME</th>
                         <th>PRODUCT PRICE</th>

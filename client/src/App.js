@@ -7,6 +7,8 @@ import AddProduct from './components/AddProduct'
 import AdminProductsList from './components/AdminProductsList'
 import HeaderAdmin from './components/HeaderAdmin'
 import Login from './components/Login'
+
+import Nav from './components/Nav'
 import HeaderCheckout from './components/HeaderCheckout'
 import HeaderReg from './components/HeaderReg'
 import EditProduct from './components/EditProduct'
@@ -42,6 +44,7 @@ function App() {
           <Route path={'/admin'} element={<AdminProductsList/>}></Route>
           <Route path={'/admin/create'} element={<AddProduct />}></Route>
           <Route path={'/admin/edit/:id'} element={<EditProduct />}></Route>
+          <Route path={'/create'} element={null}></Route>
           <Route path={'/products'} element={<Products />}></Route>
           <Route path={'/locations'} element={<Locations />}></Route>
           <Route path={'/about'} element={<About />}></Route>
