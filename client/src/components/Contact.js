@@ -140,6 +140,7 @@ const logout = (e)=>{
 
               <textarea 
               rows='5' cols='40'
+              style={{marginTop:'20px'}}
               name = 'message'
               placeholder='Questions? Comments? Concerns?'
               value={custConcerns}
