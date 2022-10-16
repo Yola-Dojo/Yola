@@ -1,15 +1,16 @@
 import React from 'react'
-import OptionsAdmin from './OptionsAdmin'
+import LinksAdmin from './LinksAdmin'
+import Logo from './Logo'
 
 const HeaderAdmin = (props) => {
 
-  const {user} = props
+  const {user, setUser} = props
 
   return (
     <header>
-      <h1>Yola</h1>
-      <h1>Welcome, {user}</h1>
-      <OptionsAdmin />
+      <h1><Logo /></h1>
+      <span className='welcome'>Welcome, {user}</span>
+      <LinksAdmin user={user} setUser={setUser} />
     </header>
   )
 }

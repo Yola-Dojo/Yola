@@ -1,14 +1,19 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-import {useNavigate, Link} from 'react-router-dom'
+import Register from './Register'
+import {useNavigate} from 'react-router-dom'
 
-const Login = () => {
+const Login = (props) => {
 
     const [email, setEmail] = useState("")
     const [password,setPassword] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
-    
+
     const navigate = useNavigate()
+
+    const {user, setUser} = props
+
+    const openDialog = () => {document.getElementById('regDialog').showModal()}
 
     const login = (event)=>{
         event.preventDefault()
@@ -21,9 +26,11 @@ const Login = () => {
             withCredentials: true
         })
         .then((res)=>{
+            const userName = res.data.firstName
+            setUser(userName)
             console.log(res, "res")
             console.log(res.data, "is res data!")
-            // navigate("") waiting for location to navigate to
+            navigate('/products')
         })
         .catch((err)=>{
             console.log(err.response.data)
@@ -32,7 +39,8 @@ const Login = () => {
     }
 
 //waiting to agree on CSS styling ..
-return (
+  return (
+    <>
     <div className='login-form'>
         <div>
             <h2>Login to Your Account</h2>
@@ -57,7 +65,7 @@ return (
                     />
                 </div>
                 <div>
-                    <button style={{cursor:'pointer'}}>Sign in</button>
+                    <button type='submit'>Sign in</button>
                 </div>
             </form>
         </div>
@@ -65,9 +73,11 @@ return (
         <div>
             <h2>New Here?</h2>
             <p>Sign up to get started</p>
-            <Link to ={'/register'}><button style={{cursor:'pointer'}}>Sign Up</button></Link>
+            <button type='submit' onClick={openDialog}>Sign Up</button>
         </div>
     </div>
+    <Register />
+    </>
   )
 }
 

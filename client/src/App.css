@@ -1,38 +1,98 @@
 
-* {box-sizing: border-box}
+* {
+  box-sizing: border-box;
+  font-family: 'Avro', 'Open Sans', sans-serif;
+  --fw-normal: 400;
+  --fw-heavy: 700;
+  --colorAcc: #c4578e
+}
 
 html {
-  --page-width: 880px
+  font-size: 10px;
+  --screen-pad: 5vw;
+  --logoWidth: clamp(200px, 30vw, 500px)
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: 33vw;
+  grid-auto-rows: max-content;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   width: 100%;
-  max-width: var(--page-width);
-  margin-inline: auto
+  padding-block: 20px;
+  padding-inline: var(--screen-pad);
+  background-color: #f9f9f9
+}
+
+@media only screen and (max-width : 874px) {
+
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 {
+    order: 1;
+    align-self: center
+  }
+
+  nav {order: 2}
+  ul.inline.stageRight {order: 3}
+
 }
 
 main {
   width: 100%;
-  max-width: var(--page-width);
-  margin-inline: auto
+  padding-block: 20px;
+  padding-inline: var(--screen-pad);
 }
 
 h1 {
-  margin-block: 0
+  margin-block: 0;
+  grid-row-start: 1;
+  grid-column-start: 2
+}
+
+h1 a {
+  text-decoration: none
+}
+
+p, li {
+  font-size: 1.8rem;
+  font-weight: var(--fw-normal);
+  line-height: 3.2rem
+}
+
+span.welcome {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  font-size: 2rem;
+  font-weight: var(--fw-heavy)
+}
+
+nav {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2
 }
 
 ul.inline {
   list-style-type: none;
   padding-left: 0;
-  --li-space: 0.5em
+  --li-space: 0.5em;
+  margin: 0
+}
+
+ul.inline.stageRight {
+  grid-column-start: 3;
+  grid-row-start: 2
 }
 
 ul.inline li {
   display: inline;
-  margin-left: var(--li-space)
+  margin-left: var(--li-space);
+  font-size: clamp(1rem, 2vw, 1.6rem)
 }
 
 
@@ -50,17 +110,115 @@ ul.inline li:last-child:after {
   content: ''
 }
 
+ul.inline a {
+  color: var(--colorAcc);
+  letter-spacing: 0.4ch;
+}
+
+ul.inline button.link {
+  color: var(--colorAcc);
+  letter-spacing: 0.4ch;
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  font-weight: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  cursor: pointer
+}
+
+.noWrap {
+  white-space: nowrap;
+}
+
 .cartIcon {
   height: 1em;
   vertical-align: middle
 }
 
-/* need to make responsive below -------------------------------------- */
+.logo {
+  width: var(--logoWidth);
+  margin-bottom: 20px
+}
+label {
+  display: block;
+  font-weight: 500;
+  color: #E7E9EC;
+  font-size: 2rem;
+  line-height: 1.25rem;
+  margin-bottom: 8px
+}
+
+input {
+  border: 1px solid rgb(209 213 219);
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-top: 24px
+}
+
+button[type='submit'] {
+  background-color: rgb(79, 70, 229);
+  border-radius: 6px;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 2rem;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  margin-top: 24px;
+  cursor: pointer
+}
+
+button[type='submit']:hover {
+  background-color: rgb(99 102 241)
+}
+
+dialog {
+  padding-block: 3rem;
+  padding-inline: 3rem;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  position: relative
+}
+
+dialog::backdrop {
+  background: rgba(229, 231, 235, 0.9)
+}
+
+dialog button.closer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  font-weight: 600;
+  color: lightgray
+}
 
 .login-form { /* components/Login.js*/
   display: flex;
   justify-content: space-around;
 }
+
+@media only screen and (max-width : 550px) {
+  .login-form {
+    display: block
+  }
+  .login-form > div {
+    margin-top: 48px;
+    margin-bottom: 48px
+  }
+  .login-form > div:first-child {
+    margin-top: 0
+  }
+  .login-form > div:last-child {
+    margin-bottom: 0
+  }
+}
+
+/* need to make responsive below -------------------------------------- */
 
 .reg-form { /* components/Register.js*/
   display: flex;
@@ -78,8 +236,6 @@ ul.inline li:last-child:after {
 .reg-bottom { /* components/Register.js*/
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 150px;
 }
 
 .landingPage { /* components/LandingPage.js*/
@@ -132,6 +288,26 @@ table-1 tr td:first-child::before {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+.contact-container { /* components/Contact.js*/
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 100px;
+}
+
+.left-col { /* components/Contact.js*/
+  text-align: center;
+  width: 400px;
+}
+
+.right-col { /* components/Contact.js*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1;
+  height: 200px;
+
 }
 /* need to make responsive above -------------------------------------- */
 
