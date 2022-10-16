@@ -109,8 +109,8 @@ const logout = (e)=>{
   return (
     <div className ='contact-container'>
         <div className='left-col'>
-            <h2>Contact us</h2>
-            <p style={{wordWrap:'break-word'}}>sfjsjfs jflkjsiewf wfsklflwe wefjdfdsjfjk dsfjkdsjjkdsjfksdj sfjsjfs jflkjsiewf wfsklflwe wefjdfdsjfjk dsfjkdsjjkdsjfksdj sfjsjfs jflkjsiewf wfsklflwe wefjdfdsjfjk dsfjkdsjjkdsjfksdj sfjsjfs jflkjsiewf wfsklflwe wefjdfdsjfjk dsfjkdsjjkdsjfksdj sfjsjfs jflkjsiewf wfsklflwe wefjdfdsjfjk dsfjkdsjjkdsjfksdj sfjsjfs jflkjsiewf wfsklflwe wefjdfdsjfjk dsfjkdsjjkdsjfksdj </p>
+            <h1>Contact us</h1>
+            <p style={{wordWrap:'break-word'}}>Thank you for your interest in Yola! We value your input. Your engagement and feedback are invaluable to our growth. By telling us where you are from, we get an idea of where to supply Yola in the future. To all questions and comments, we're committed to responding promptly. Finally, please let us know how you heard of us!</p>
         </div>
         <form ref={form} className='contact-form' onSubmit={submitHandle}>
           <div className='right-col'>

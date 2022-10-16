@@ -300,14 +300,15 @@ table-1 tr td:first-child::before {
 .left-col { /* components/Contact.js*/
   text-align: center;
   width: 400px;
+  margin-right: 20px;
 }
 
 .right-col { /* components/Contact.js*/
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex: 1;
-  height: 200px;
+  height: 290px;
 
 }
 /* need to make responsive above -------------------------------------- */
