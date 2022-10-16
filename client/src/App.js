@@ -27,15 +27,15 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-        <Route path={'/'} element={<Header />} />
+        <Route path={'/'} element={<Header user={user}/>} />
         <Route path={'/login'} element={<HeaderReg />} />
-        <Route path={'/products'} element={<Header />} />
+        <Route path={'/products'} element={<Header user={user}/>} />
         <Route path={'/checkout'} element={<HeaderCheckout user={user} /> } />
         <Route path={'/admin'} element={<HeaderAdmin user={user} setUser={setUser} /> } />
         <Route path={'/admin/create'} element={<HeaderAdmin user={user} setUser={setUser} />}></Route>
-        <Route path={'/locations'} element={<Header /> } />
-        <Route path={'/about'} element={<Header /> } />
-        <Route path={'/contact'} element={<Header /> } />
+        <Route path={'/locations'} element={<Header user={user}/> } />
+        <Route path={'/about'} element={<Header user={user}/> } />
+        <Route path={'/contact'} element={<Header user={user}/> } />
       </Routes>
       <main>
         <Routes>

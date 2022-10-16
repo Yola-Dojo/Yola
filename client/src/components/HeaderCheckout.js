@@ -10,7 +10,7 @@ const HeaderCheckout = (props) => {
     <header>
       <Link to='/'>Continue Shopping</Link>
       <h1><Logo /></h1>
-      <span>Welcome, {user}</span>
+      {user !== '' ? <span className='welcome'>Welcome, {user}</span> : null }
     </header>
   )
 }

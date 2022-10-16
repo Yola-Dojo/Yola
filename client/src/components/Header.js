@@ -5,13 +5,15 @@ import Logo from './Logo'
 
 const Header = (props) => {
 
+  const {user} = props
+
   return (
     <header>
       <nav>
         <LinksNav />
       </nav>
       <h1><Logo /></h1>
-      <LinksOptions />
+      <LinksOptions user={user} />
     </header>
   )
 }
