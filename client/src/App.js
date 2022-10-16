@@ -11,6 +11,10 @@ import HeaderCheckout from './components/HeaderCheckout'
 import HeaderReg from './components/HeaderReg'
 import EditProduct from './components/EditProduct'
 import Contact from './components/Contact'
+import Checkout from './components/Checkout'
+import Products from './components/Products'
+import Locations from './components/Locations'
+import About from './components/About'
 
 
 function App() {
@@ -34,14 +38,13 @@ function App() {
         <Routes>
           <Route path={'/'} element={<LandingPage/>}></Route>
           <Route path={'/login'} element={<Login user={user} setUser={setUser} />}></Route>
-          <Route path={'/checkout'} element={null}></Route>
+          <Route path={'/checkout'} element={<Checkout />}></Route>
           <Route path={'/admin'} element={<AdminProductsList/>}></Route>
           <Route path={'/admin/create'} element={<AddProduct />}></Route>
           <Route path={'/admin/edit/:id'} element={<EditProduct />}></Route>
-          <Route path={'/create'} element={null}></Route>
-          <Route path={'/products'} element={null}></Route>
-          <Route path={'/locations'} element={null}></Route>
-          <Route path={'/about'} element={null}></Route>
+          <Route path={'/products'} element={<Products />}></Route>
+          <Route path={'/locations'} element={<Locations />}></Route>
+          <Route path={'/about'} element={<About />}></Route>
           <Route path={'/contact'} element={<Contact/>}></Route>
         </Routes>
       </main>
