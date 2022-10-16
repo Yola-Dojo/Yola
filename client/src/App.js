@@ -32,6 +32,7 @@ function App() {
         <Route path={'/products'} element={<Header />} />
         <Route path={'/checkout'} element={<HeaderCheckout user={user} /> } />
         <Route path={'/admin'} element={<HeaderAdmin user={user} setUser={setUser} /> } />
+        <Route path={'/admin/create'} element={<HeaderAdmin user={user} setUser={setUser} />}></Route>
         <Route path={'/locations'} element={<Header /> } />
         <Route path={'/about'} element={<Header /> } />
         <Route path={'/contact'} element={<Header /> } />
