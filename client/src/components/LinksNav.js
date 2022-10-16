@@ -8,7 +8,6 @@ const LinksNav = () => {
       <li><Link to='/products'>Shop</Link></li>
       <li><Link to='/about'>About</Link></li>
       <li><Link to='/contact' className='noWrap'>Contact Us</Link></li>
-      <li><Link to='/checkout' className='noWrap'>Dev Checkout</Link></li>
       <li><Link to='/admin' className='noWrap'>Dev Admin</Link></li>
     </ul>
   )
