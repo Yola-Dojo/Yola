@@ -8,11 +8,11 @@ const LinksNav = () => {
 
   return (
     <ul className='inline'>
-      { path !== '/locations' ? <li><Link to='/locations' className='noWrap'>Store Locator</Link></li> : null }
-      { path !== '/products' ? <li><Link to='/products'>Shop</Link></li> : null }
-      { path !== '/about' ? <li><Link to='/about'>About</Link></li> : null }
-      { path !== '/contact' ? <li><Link to='/contact' className='noWrap'>Contact Us</Link></li> : null }
-      { path !== '/admin' ? <li><Link to='/admin' className='noWrap'>Dev Admin</Link></li> : null }
+      <li>{ path !== '/locations' ? <Link to='/locations' className='noWrap'>Store Locator</Link> : <span className='disabled'>Store Locator</span> } </li>
+      <li>{ path !== '/products' ? <Link to='/products'>Shop</Link> : <span className='disabled'>Shop</span> } </li>
+      <li>{ path !== '/about' ? <Link to='/about'>About</Link> : <span className='disabled'>About</span> } </li>
+      <li>{ path !== '/contact' ? <Link to='/contact' className='noWrap'>Contact Us</Link> : <span className='disabled'>Contact Us</span> } </li>
+      <li>{ path !== '/admin' ? <Link to='/admin' className='noWrap'>Dev Admin</Link> : <span className='disabled'>Dev Admin</span> } </li>
     </ul>
   )
 }

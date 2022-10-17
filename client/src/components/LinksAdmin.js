@@ -27,9 +27,9 @@ const LinksAdmin = (props) => {
 
   return (
     <ul className='inline stageRight'>
-      { path !== '/admin/create' ? <li><Link to='/admin/create' className='noWrap'>Create Product</Link></li> : null }
-      { path !== '/admin' ? <li><Link to='/admin'>Home</Link></li> : null }
-      { path !== '/inbox' ? <li><Link to='/inbox'>Inbox</Link></li> : null }
+      <li>{ path !== '/admin/create' ? <Link to='/admin/create' className='noWrap'>Create Product</Link> : <span className='disabled'>Create Product</span> } </li>
+      <li>{ path !== '/admin' ? <Link to='/admin'>Home</Link> : <span className='disabled'>Home</span> } </li>
+      <li>{ path !== '/inbox' ? <Link to='/inbox'>Inbox</Link> : <span className='disabled'>Inbox</span> } </li>
       <li><button className='link' onClick={handleLogout}>Logout</button></li>
     </ul>
   )

@@ -98,8 +98,8 @@ ul.inline li {
 
 ul.inline li:after {
   content: '|';
-  padding-left: var(--li-space)
-
+  padding-left: var(--li-space);
+  color: var(--colorAcc);
 }
 
 ul.inline li:first-child {
@@ -125,6 +125,14 @@ ul.inline button.link {
   font-size: inherit;
   font-weight: inherit;
   cursor: pointer
+}
+
+ul.inline span.disabled {
+  color: var(--colorAcc);
+  letter-spacing: 0.4ch;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  font-size: inherit
 }
 
 .noWrap {
