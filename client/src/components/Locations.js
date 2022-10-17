@@ -6,7 +6,7 @@ const Locations = () => {
     
     
     <div>
-      <h2>Locations component</h2>
+      <h2>Where to find Yola</h2>
       <Map/>
     </div>
   )

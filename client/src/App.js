@@ -7,7 +7,7 @@ import AddProduct from './components/AddProduct'
 import AdminProductsList from './components/AdminProductsList'
 import HeaderAdmin from './components/HeaderAdmin'
 import Login from './components/Login'
-
+import Inbox from './components/Inbox'
 // import Nav from './components/Nav'
 import HeaderCheckout from './components/HeaderCheckout'
 import HeaderReg from './components/HeaderReg'
@@ -40,6 +40,7 @@ function App() {
         <Route path={'/products'} element={<Header user={user}/>} />
         <Route path={'/checkout'} element={<HeaderCheckout user={user} /> } />
         <Route path={'/admin'} element={<HeaderAdmin user={user} setUser={setUser} /> } />
+        <Route path={'/inbox'} element={<HeaderAdmin user={user} setUser={setUser} /> } />
         <Route path={'/admin/create'} element={<HeaderAdmin user={user} setUser={setUser} />}></Route>
         <Route path={'/locations'} element={<Header user={user}/> } />
         <Route path={'/about'} element={<Header user={user}/> } />
@@ -53,6 +54,7 @@ function App() {
           <Route path={'/admin'} element={<AdminProductsList/>}></Route>
           <Route path={'/admin/create'} element={<AddProduct />}></Route>
           <Route path={'/admin/edit/:id'} element={<EditProduct />}></Route>
+          <Route path={'/inbox'} element={<Inbox />}></Route>
           <Route path={'/create'} element={null}></Route>
           <Route path={'/products'} element={<Products userInfo={userInfo} setUserInfo={setUserInfo} />}></Route>
           <Route path={'/locations'} element={<Locations />}></Route>

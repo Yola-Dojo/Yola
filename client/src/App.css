@@ -98,8 +98,8 @@ ul.inline li {
 
 ul.inline li:after {
   content: '|';
-  padding-left: var(--li-space)
-
+  padding-left: var(--li-space);
+  color: var(--colorAcc);
 }
 
 ul.inline li:first-child {
@@ -125,6 +125,14 @@ ul.inline button.link {
   font-size: inherit;
   font-weight: inherit;
   cursor: pointer
+}
+
+ul.inline span.disabled {
+  color: var(--colorAcc);
+  letter-spacing: 0.4ch;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  font-size: inherit
 }
 
 .noWrap {
@@ -194,7 +202,8 @@ dialog button.closer {
   border: none;
   font-size: 2rem;
   font-weight: 600;
-  color: lightgray
+  color: lightgray;
+  cursor: pointer;
 }
 
 .login-form { /* components/Login.js*/
@@ -318,4 +327,42 @@ table-1 tr td:first-child::before {
   border:1px solid gray
 }
 /* need to make responsive above -------------------------------------- */
+.inbox-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 4px 4px 3px gray;
+  border-radius: 5px;
+  background-color:#F5F5F5;
+  margin-bottom: 15px;
+}
 
+.inbox-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  flex: 2;
+}
+
+.inbox-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.inbox-btn {
+  cursor: pointer;
+  box-shadow: 2px 2px 4px black;
+  font-weight: bold;
+}
+
+.inbox-btn:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #F5F5F5;
+  font-weight: normal;
+}
