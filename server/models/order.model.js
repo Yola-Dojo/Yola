@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const OrderSchema = new mongoose.Schema({
-
+    
     productName: {
         type:String,
         required: [true, "Product name is required"],

@@ -12,21 +12,20 @@ const Products = (props) => {
     const [productImg,setProductImg]=useState("")
     const [productQuantity,setProductQuantity]=useState({})
     const [errors,setErrors]= useState({})
-    const {loggedIn, setLoggedIn}= props
     const navigate = useNavigate()
     const {id} = useParams();
-    const [users, setUsers] = useState([])
     const [products, setProducts]= useState([])
     const [productList, setProductList] = useState("")
-    const [usersList, setUsersList] = useState("")
     //const [order,setOrder] = ({})
+
+    const {userInfo, setUserInfo} = props;
 
     useEffect(()=>{
         axios.get('http://localhost:8000/api/products')
         .then((res)=>{
             console.log(res.data.products)
-            console.log("Hi")
             setProducts(res.data.products)
+            console.log(userInfo)
         })
         .catch((err)=>{
             console.log(err.response.data.error.errors)
@@ -39,10 +38,10 @@ const Products = (props) => {
         setProductQuantity(e.target.value)
 
     }
-    console.log(productQuantity)
+    //console.log(productQuantity)
     const handleSubmit= (e,item)=>{
         e.preventDefault()
-        console.log(item)
+        //console.log(item)
         const order = {
             productName:item.productName,
             productPrice:item.productPrice,
@@ -50,16 +49,15 @@ const Products = (props) => {
             productImg:item.productImg,
             productQuantity
         }
-        console.log(order)
-        console.log("Hii")
+        //console.log(order)
         axios.post("http://localhost:8000/api/orders",order,{withCredentials:true})
-        .then((res)=>{
-            console.log(res.data.order)
+        .then((order)=>{
+            console.log(order)
             navigate("/checkout")
         })
         .catch((error)=>{
-            setErrors(error.response.data.errors)
-            console.log(error.response.data.errors)
+            //setErrors(error.response.data.errors)
+            //console.log(error.response.data.errors)
         })
     }
 return (
@@ -72,15 +70,15 @@ return (
                     <div key={idx1}>
                             <div className="card hover" style={{backgroundImage:`url(${item.productImg})`,backgroundSize:"cover"}}></div>
                             <div>
-                                <p>Product Name:{item.productName} </p>
-                                <p>Product Price:{item.productPrice}</p>
+                                <p>{item.productName} </p>
+                                <p>${item.productPrice}</p>
                                 <p> {item.productDescription}</p>
                                 <label>Quantity:</label>
                                 <input type="number" min="1" max="100" onChange={productQuantityHandler} /><br/><br/>
                             </div>
                                 <button type="button" className="btn-2 formbtn" onClick={(e)=>handleSubmit(e,item)}>Add To Cart</button><br/><br/>                                
                     </div>  
-                            ))
+                        ))
                 }
                 </form>    
             </div>

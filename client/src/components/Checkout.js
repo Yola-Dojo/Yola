@@ -21,10 +21,11 @@ const Checkout = (props) => {
     const [orderList, setOrderList] = useState("")
     const [usersList, setUsersList] = useState("")
     const [orders,setOrders] = useState([])
-
+    const {user, setUser} = props
+    const {userInfo, setUserInfo} = props;
 
     useEffect(()=>{
-        axios.get('http://localhost:8000/api/orders')
+        axios.get('http://localhost:8000/api/orders',{withCredentials:true})
         .then((res)=>{
             console.log(res.data.orders)
             setOrders(res.data.orders)
@@ -34,6 +35,7 @@ const Checkout = (props) => {
             setErrors(err.response.data.error.errors)
         })
     },[orderList])
+
 
     const orderDeleteHandler = (idx1,pid) => {
         axios.delete(`http://localhost:8000/api/orders/${pid}`)
@@ -45,6 +47,14 @@ const Checkout = (props) => {
             })
             .catch((err) => console.log(err))
     }
+
+    const loggedInUserOrders = orders.filter(val =>val.createdBy === userInfo.userId)
+    //console.log(loggedInUserOrders)
+    
+
+    const itemsPrice = loggedInUserOrders.reduce((a, c) => a + c.productQuantity * c.productPrice, 0);
+    const taxPrice = itemsPrice * 0.0725;
+    const totalPrice = itemsPrice + taxPrice;
 
 return (
     <div className="tableDiv">
@@ -58,7 +68,7 @@ return (
                 <th>ACTIONS</th>
             </tr>
             {
-                orders.map((item,idx1)=>(  
+                loggedInUserOrders.map((item,idx1)=>(  
                     <tr key={idx1}>
                         <td>{item.productName}</td>
                         <td>{item.productPrice}</td>
@@ -69,13 +79,28 @@ return (
                         </td>
                         <td>
                             <button className="edit-page-btns btn-1" onClick={()=>orderDeleteHandler(idx1,item._id)}>Delete</button>
-                            <button className="btn-2 formbtn" onClick={()=>navigate(`/admin/edit/${item._id}`) }>Edit</button>                                   
+                            {/* <button className="btn-2 formbtn" onClick={()=>navigate(`/admin/edit/${item._id}`) }>Edit</button>                                    */}
                         </td>
                     </tr>
                 ))
             }
         </tbody>  
     </table>
+    <aside className="aside">
+        <h2>Cart Items</h2>
+        <div>
+            {loggedInUserOrders.length === 0 && <div> Cart is Empty</div>}
+            {loggedInUserOrders.map((item) =>
+            <div className="">
+                {item.productQuantity} x ${item.productPrice.toFixed(2)}
+            </div>
+
+        )}
+            <p>{loggedInUserOrders.length} Products</p>
+            <p>Total: {totalPrice}</p>
+        </div>
+    </aside>
+
 </div>
 )
 }

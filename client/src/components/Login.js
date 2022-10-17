@@ -12,6 +12,7 @@ const Login = (props) => {
     const navigate = useNavigate()
 
     const {user, setUser} = props
+    const {userInfo, setUserInfo} = props;
 
     const openDialog = () => {document.getElementById('regDialog').showModal()}
 
@@ -29,7 +30,9 @@ const Login = (props) => {
             const userName = res.data.firstName
             setUser(userName)
             console.log(res, "res")
+            setUserInfo(res.data)
             console.log(res.data, "is res data!")
+            //console.log(userInfo)
             navigate('/products')
         })
         .catch((err)=>{

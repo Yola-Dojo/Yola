@@ -311,5 +311,11 @@ table-1 tr td:first-child::before {
   height: 290px;
 
 }
+.aside
+{
+  margin-left:5%;
+  padding: 5px;
+  border:1px solid gray
+}
 /* need to make responsive above -------------------------------------- */
 

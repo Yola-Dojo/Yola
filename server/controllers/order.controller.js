@@ -1,5 +1,6 @@
 const Order= require('../models/order.model')
 const User = require("../models/user.model")
+
 const jwt = require("jsonwebtoken");
 
 const OrderController = {
@@ -12,7 +13,6 @@ const OrderController = {
         })
 
         newOrderObject.createdBy = decodedJWT.payload.id
-    
 
         newOrderObject.save(req.body)
         .then((order)=>{
