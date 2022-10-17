@@ -7,6 +7,8 @@ const Inbox = () => {
     const [inboxList,setInboxList] = useState([])
     const [user, setUser] = useState({})
 
+    const openDialog = () => {document.getElementById('regDialog').showModal()}
+
     useEffect(()=>{
         axios.get("http://localhost:8000/api/users", {withCredentials:true})
             .then((res)=>{
@@ -25,7 +27,7 @@ const Inbox = () => {
             setInboxList(res.data.feedbacks)
         })
         .catch((err)=>{
-            console.log("AAAAAAA", err)
+            console.log(err)
         })
     
     }, [])
@@ -51,18 +53,18 @@ const Inbox = () => {
                 inboxList.map((item,index)=>(
                     <div key={index}className = 'inbox-list'>
                         <div className='inbox-left'>
-                            <p>{item.custEmail}</p>
                             <p>Name: {item.custName}</p>
+                            <p>{item.custEmail}</p>
+                            <p>Location: {item.custLocation}</p>
+                            <p style={{wordWrap:'break-word'}}>Message: {item.custConcerns}</p>
                         </div>
                         <div className='inbox-right'>
-                            <p><Link to = {"#"}>View</Link></p>
                             <button className='inbox-btn' onClick={()=>deleteHandle(item._id)}>Delete</button>
                         </div>
                     </div>
                 ))
             }
         </div>
-
     </div>
   )
 }
