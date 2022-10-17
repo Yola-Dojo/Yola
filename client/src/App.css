@@ -194,7 +194,8 @@ dialog button.closer {
   border: none;
   font-size: 2rem;
   font-weight: 600;
-  color: lightgray
+  color: lightgray;
+  cursor: pointer;
 }
 
 .login-form { /* components/Login.js*/
@@ -320,13 +321,16 @@ table-1 tr td:first-child::before {
   box-shadow: 4px 4px 3px gray;
   border-radius: 5px;
   background-color:#F5F5F5;
+  margin-bottom: 15px;
 }
 
 .inbox-left {
   display: flex;
   flex-direction: row;
-  width: 40%;
+  align-items: center;
+  width: 100%;
   justify-content: space-around;
+  flex: 2;
 }
 
 .inbox-right {
@@ -334,7 +338,7 @@ table-1 tr td:first-child::before {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  width: 15%;
+  flex: 1;
 }
 
 .inbox-btn {
