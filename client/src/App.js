@@ -17,14 +17,22 @@ import Checkout from './components/Checkout'
 import Products from './components/Products'
 import Locations from './components/Locations'
 import About from './components/About'
+import { useEffect } from 'react'
 
+
+const userInfoLocalStorage = JSON.parse(localStorage.getItem("user-info") || "[]")
 
 function App() {
 
   const [user, setUser] = useState('')
+  const [userInfo, setUserInfo] = useState(userInfoLocalStorage)
+
+  useEffect(() => {
+    localStorage.setItem("user-info",JSON.stringify(userInfo));
+  },[userInfo])
 
   return (
-
+    
     <BrowserRouter>
       <Routes>
         <Route path={'/'} element={<Header user={user}/>} />
@@ -41,14 +49,14 @@ function App() {
       <main>
         <Routes>
           <Route path={'/'} element={<LandingPage/>}></Route>
-          <Route path={'/login'} element={<Login user={user} setUser={setUser} />}></Route>
-          <Route path={'/checkout'} element={<Checkout />}></Route>
+          <Route path={'/login'} element={<Login user={user} setUser={setUser} userInfo={userInfo} setUserInfo={setUserInfo}/>}></Route>
+          <Route path={'/checkout'} element={<Checkout userInfo={userInfo} setUserInfo={setUserInfo}/>}></Route>
           <Route path={'/admin'} element={<AdminProductsList/>}></Route>
           <Route path={'/admin/create'} element={<AddProduct />}></Route>
           <Route path={'/admin/edit/:id'} element={<EditProduct />}></Route>
           <Route path={'/inbox'} element={<Inbox />}></Route>
           <Route path={'/create'} element={null}></Route>
-          <Route path={'/products'} element={<Products />}></Route>
+          <Route path={'/products'} element={<Products userInfo={userInfo} setUserInfo={setUserInfo} />}></Route>
           <Route path={'/locations'} element={<Locations />}></Route>
           <Route path={'/about'} element={<About />}></Route>
           <Route path={'/contact'} element={<Contact/>}></Route>

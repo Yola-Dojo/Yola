@@ -16,7 +16,9 @@ require('./config/mongoose.config')
 
 require('./routes/product.route')(app)
 require('./routes/user.route')(app) //added for LR
+require('./routes/order.route')(app)
 require('./routes/feedback.route')(app)
+
 
 
 
