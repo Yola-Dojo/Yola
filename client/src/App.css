@@ -327,7 +327,7 @@ table-1 tr td:first-child::before {
   border:1px solid gray
 }
 /* need to make responsive above -------------------------------------- */
-.inbox-list {
+.inbox-list { /*components/inbox.js*/
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -338,7 +338,7 @@ table-1 tr td:first-child::before {
   margin-bottom: 15px;
 }
 
-.inbox-left {
+.inbox-left { /*components/inbox.js*/
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -347,7 +347,7 @@ table-1 tr td:first-child::before {
   flex: 2;
 }
 
-.inbox-right {
+.inbox-right { /*components/inbox.js*/
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -355,13 +355,26 @@ table-1 tr td:first-child::before {
   flex: 1;
 }
 
-.inbox-btn {
+.inbox-btn { /*components/inbox.js*/
   cursor: pointer;
   box-shadow: 2px 2px 4px black;
   font-weight: bold;
 }
 
-.inbox-btn:hover {
+.inbox-btn:hover { /*components/inbox.js*/
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #F5F5F5;
+  font-weight: normal;
+}
+
+.contact-btn { /* components/Contact.js*/
+  cursor: pointer;
+  box-shadow: 2px 2px 4px black;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.contact-btn:hover {
   cursor: pointer;
   box-shadow: 0px 0px 0px #F5F5F5;
   font-weight: normal;
