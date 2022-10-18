@@ -56,7 +56,7 @@ function App() {
           <Route path={'/admin/edit/:id'} element={<EditProduct />}></Route>
           <Route path={'/inbox'} element={<Inbox />}></Route>
           <Route path={'/create'} element={null}></Route>
-          <Route path={'/products'} element={<Products userInfo={userInfo} setUserInfo={setUserInfo} />}></Route>
+          <Route path={'/products'} element={<Products user={user} setUser={setUser} userInfo={userInfo} setUserInfo={setUserInfo} />}></Route>
           <Route path={'/locations'} element={<Locations />}></Route>
           <Route path={'/about'} element={<About />}></Route>
           <Route path={'/contact'} element={<Contact/>}></Route>

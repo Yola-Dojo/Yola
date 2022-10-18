@@ -16,16 +16,16 @@ const Products = (props) => {
     const {id} = useParams();
     const [products, setProducts]= useState([])
     const [productList, setProductList] = useState("")
-    //const [order,setOrder] = ({})
-
+    const {user, setUser} = props
     const {userInfo, setUserInfo} = props;
 
     useEffect(()=>{
-        axios.get('http://localhost:8000/api/products')
+        axios.get('http://localhost:8000/api/products',{withCredentials:true})
         .then((res)=>{
             console.log(res.data.products)
             setProducts(res.data.products)
             console.log(userInfo)
+            console.log(user)
         })
         .catch((err)=>{
             console.log(err.response.data.error.errors)

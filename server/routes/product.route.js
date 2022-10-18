@@ -5,7 +5,7 @@ const routes = (app)=>{
 
     app.post('/api/products', authenticate, ProductController.create)
 
-    app.get('/api/products', ProductController.getAll)
+    app.get('/api/products',authenticate, ProductController.getAll)
 
     app.get('/api/products/:id', ProductController.getOne)
 
