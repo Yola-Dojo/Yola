@@ -21,7 +21,7 @@ const AdminProductsList = (props) => {
     
 
     useEffect(()=>{
-        axios.get('http://localhost:8000/api/products')
+        axios.get('http://localhost:8000/api/products',{withCredentials:true})
         .then((res)=>{
             console.log(res.data.products)
             setProducts(res.data.products)
@@ -55,13 +55,11 @@ const AdminProductsList = (props) => {
             .catch((err) => console.log(err))
     }
 
-    const userDeleteHandler = (e) => {
-        axios.delete(`http://localhost:8000/api/users/${id}`)
+    const userDeleteHandler = (uid) => {
+        axios.delete(`http://localhost:8000/api/users/${uid}`)
             .then((res) => {
-            setUsersList("refresh")
-            setProductList("refresh")
-            setUsers(users)
             console.log(res.data)
+            setUsersList("refresh")
             window.location.reload(false);
 
             })
@@ -112,7 +110,7 @@ return (
                             <tr key={idx}>
                                 <td>{item.firstName} {item.lastName}</td>
                                 <td>
-                                    <button className="edit-page-btns btn-1" onClick={userDeleteHandler}>Delete</button>                                    
+                                    <button className="edit-page-btns btn-1" onClick={()=>userDeleteHandler(item._id)} >Delete</button>                                    
                                 </td>
                             </tr>
                         ))

@@ -8,7 +8,7 @@ const HeaderCheckout = (props) => {
 
   return (
     <header>
-      <Link to='/'>Continue Shopping</Link>
+      <Link to='/products'>Continue Shopping</Link>
       <h1><Logo /></h1>
       {user !== '' ? <span className='welcome'>Welcome, {user}</span> : null }
     </header>

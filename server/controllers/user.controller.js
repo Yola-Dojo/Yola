@@ -99,6 +99,16 @@ const UserController = {
             res.status(500).json({message:"Somthing Went Wrong!",error:err})
         })
 
+    },
+    //Delete User
+    delete:(req,res)=>{
+        User.deleteOne({_id:req.params.id})
+        .then((user)=>{
+            res.status(200).json({deletedUser:user})
+        })
+        .catch((err)=>{
+            res.status(400).json({message:"something went wrong deleting User", error:err})
+        })
     }
 
 
