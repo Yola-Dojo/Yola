@@ -139,7 +139,7 @@ const logout = (e)=>{
               />
 
               <textarea 
-              rows='5' cols='40'
+              rows='10' cols='50'
               style={{marginTop:'20px'}}
               name = 'message'
               placeholder='Questions? Comments? Concerns?'
@@ -148,7 +148,7 @@ const logout = (e)=>{
               ></textarea>
 
               <div>
-              <button>Submit</button>
+              <button className='contact-btn'>Submit</button>
               </div>
           </div>
         </form>
