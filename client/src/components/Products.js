@@ -17,6 +17,7 @@ const Products = (props) => {
     const [products, setProducts]= useState([])
     const [productList, setProductList] = useState("")
     const {user, setUser} = props
+
     const {userInfo, setUserInfo} = props;
 
     useEffect(()=>{

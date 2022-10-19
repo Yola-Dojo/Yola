@@ -8,7 +8,7 @@ const routes = (app)=>{
     app.post('/api/users/logout', UserController.logout)
     app.delete('/api/users/:id', UserController.delete)
     app.get('/api/users', authenticate, UserController.getLoggedInUser)
-    app.get('/api/users/getAllUsers',UserController.getAllUsers)
+    app.get('/api/users/getAllUsers',authenticate,UserController.getAllUsers)
 }
 
 module.exports = routes

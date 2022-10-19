@@ -16,5 +16,16 @@ module.exports = {
                 }
             }
             )
-    }
+    },
+    isLoggedIn:(req, res) => {
+        jwt.verify(req.cookies.usertoken,process.env.JWT_SECRET,(err, payload) => {
+        if (err) { 
+            res.status(401).json({verified: false});
+        } else {
+            const user = User.findOne({_id:payload.id})
+            const {_id,firstName} = user
+            return res.json({user:{id:_id,name:firstName}})
+        }
+        })
+        },
 }

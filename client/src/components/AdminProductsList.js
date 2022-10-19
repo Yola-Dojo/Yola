@@ -18,9 +18,11 @@ const AdminProductsList = (props) => {
     const [products, setProducts]= useState([])
     const [productList, setProductList] = useState("")
     const [usersList, setUsersList] = useState("")
+    const {user,setUser}= props
     
 
     useEffect(()=>{
+        !user && navigate("/login")
         axios.get('http://localhost:8000/api/products',{withCredentials:true})
         .then((res)=>{
             console.log(res.data.products)
@@ -33,7 +35,8 @@ const AdminProductsList = (props) => {
     },[productList])
 
     useEffect(()=>{
-        axios.get('http://localhost:8000/api/users/getAllUsers')
+        !user && navigate("/login")
+        axios.get('http://localhost:8000/api/users/getAllUsers',{withCredentials:true})
         .then((res)=>{
             console.log(res.data.users)
             setUsers(res.data.users)

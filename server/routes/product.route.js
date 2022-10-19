@@ -3,7 +3,7 @@ const {authenticate} = require("../config/jwt.config")
 
 const routes = (app)=>{
 
-    app.post('/api/products', authenticate, ProductController.create)
+    app.post('/api/products',authenticate, ProductController.create)
 
     app.get('/api/products',authenticate, ProductController.getAll)
 
