@@ -51,7 +51,7 @@ function App() {
           <Route path={'/'} element={<LandingPage/>}></Route>
           <Route path={'/login'} element={<Login user={user} setUser={setUser} userInfo={userInfo} setUserInfo={setUserInfo}/>}></Route>
           <Route path={'/checkout'} element={<Checkout userInfo={userInfo} setUserInfo={setUserInfo}/>}></Route>
-          <Route path={'/admin'} element={<AdminProductsList/>}></Route>
+          <Route path={'/admin'} element={<AdminProductsList user={user} setUser={setUser} />}></Route>
           <Route path={'/admin/create'} element={<AddProduct />}></Route>
           <Route path={'/admin/edit/:id'} element={<EditProduct />}></Route>
           <Route path={'/inbox'} element={<Inbox />}></Route>
