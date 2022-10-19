@@ -8,8 +8,24 @@ const geojson = {
   type: 'FeatureCollection',
   features: [
     //These are the locations right here.  One per location.  
-    {type: 'Feature', geometry: {type: 'Point', coordinates: [-122.0376, 37.9577]}},
-    {type: 'Feature', geometry: {type: 'Point', coordinates: [-122.2376, 37.3577]}}
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-87.6877, 42.0451]}},
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-93.4558, 45.0725]}},
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-89.4008, 43.0722]}},
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-84.5120, 39.1031]}},
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-85.7585, 38.2527]}},
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-86.2520, 41.6764]}},
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-76.3055, 40.0379]}},
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-76.4922, 38.9784]}},
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-77.0838, 38.9566]}},
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-77.3823, 38.8639]}},
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-75.1575, 39.9509]}},
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-81.0348, 34.0007]}},
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-80.0550, 40.6266]}},
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-79.9959, 40.4406]}},
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-84.3099, 39.3601]}},
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-77.0947, 38.9847]}},
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-77.3823, 38.8639]}},
+    {type: 'Feature', geometry: {type: 'Point', coordinates: [-77.0597, 38.8606]}}
   ]
 }
 
@@ -29,7 +45,7 @@ const OurMap = () => {
 
   return (
 
-    <Map initialViewState={{longitude: -122.4376, latitude: 37.7577, zoom: 8}} style={{width: 600, height: 600}} mapStyle='mapbox://styles/mapbox/streets-v9' mapboxAccessToken={MAPBOX_TOKEN}>
+    <Map initialViewState={{longitude: -84.5120, latitude: 39.1031, zoom: 4}} style={{width: 600, height: 600}} mapStyle='mapbox://styles/mapbox/streets-v9' mapboxAccessToken={MAPBOX_TOKEN}>
       <Source id='my-data' type='geojson' data={geojson}>
         <Layer {...layerStyle} />
       </Source>
