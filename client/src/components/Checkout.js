@@ -61,24 +61,24 @@ return (
     <table className="table-1">
         <tbody >
             <tr>
-                <th>PRODUCT NAME</th>
-                <th>PRODUCT PRICE</th>
-                <th>PRODUCT IMAGE</th>
-                <th>PRODUCT Quantity</th>
-                <th>ACTIONS</th>
+                <th className="text-indigo-600 text-lg" >PRODUCT NAME</th>
+                <th className="text-indigo-600 text-lg">PRODUCT PRICE</th>
+                <th className="text-indigo-600 text-lg">PRODUCT IMAGE</th>
+                <th className="text-indigo-600 text-lg">PRODUCT Quantity</th>
+                <th className="text-indigo-600 text-lg">ACTIONS</th>
             </tr>
             {
                 loggedInUserOrders.map((item,idx1)=>(  
                     <tr key={idx1}>
-                        <td>{item.productName}</td>
-                        <td>{item.productPrice}</td>
-                        <td>{item.productDescription}</td>
-                        <td>{item.productQuantity}</td>
-                        <td>     
+                        <td className="text-indigo-600 text-lg">{item.productName}</td>
+                        <td className="text-indigo-600">{item.productPrice}</td>
+                        <td className="text-indigo-600">{item.productDescription}</td>
+                        <td className="text-indigo-600">{item.productQuantity}</td>
+                        <td className="text-indigo-600">     
                             <div className="card hover" style={{backgroundImage:`url(${item.productImg})`,backgroundSize:"cover"}}></div>
                         </td>
                         <td>
-                            <button className="edit-page-btns btn-1" onClick={()=>orderDeleteHandler(idx1,item._id)}>Delete</button>
+                            <button className="px-8 py-4 rounded-md text-lg font-medium border focus:outline-none focus:ring transition text-purple-600 border-purple-600 hover:text-white hover:bg-purple-300 active:bg-purple-700 focus:ring-purple-300" onClick={()=>orderDeleteHandler(idx1,item._id)}>Delete</button>
                             {/* <button className="btn-2 formbtn" onClick={()=>navigate(`/admin/edit/${item._id}`) }>Edit</button>                                    */}
                         </td>
                     </tr>

@@ -69,15 +69,15 @@ return (
                 {
                     products.map((item,idx1)=>( 
                     <div key={idx1}>
-                            <div className="card hover" style={{backgroundImage:`url(${item.productImg})`,backgroundSize:"contain", backgroundRepeat:'no-repeat', backgroundPositionX:"center"}}></div>
+                            <div className="card hover" style={{backgroundImage:`url(${item.productImg})`,backgroundSize:"contain", backgroundRepeat:'no-repeat', backgroundPositionX:"center"}}></div><br/>
                             <div>
-                                <p>{item.productName} </p>
-                                <p>${item.productPrice}</p>
-                                <p> {item.productDescription}</p>
+                                <p className="text-indigo-600">{item.productName} </p>
+                                <p className="text-indigo-600">${item.productPrice}</p>
+                                <p className="text-indigo-600"> {item.productDescription}</p>
                                 <label>Quantity:</label>
                                 <input type="number" min="1" max="100" onChange={productQuantityHandler} /><br/><br/>
                             </div>
-                                <button type="button" className="btn-2 formbtn" onClick={(e)=>handleSubmit(e,item)}>Add To Cart</button><br/><br/>                                
+                                <button type="button" className="px-8 py-4 rounded-md text-lg font-medium border focus:outline-none focus:ring transition text-purple-600 border-purple-600 hover:text-white hover:bg-purple-300 active:bg-purple-700 focus:ring-purple-300" onClick={(e)=>handleSubmit(e,item)}>Add To Cart</button><br/><br/>                                
                     </div>  
                         ))
                 }
@@ -86,7 +86,6 @@ return (
         </div>
     </div>
 )
-
 }
 
 export default Products
