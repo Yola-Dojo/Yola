@@ -11,6 +11,7 @@ const Contact = () => {
   const [custConcerns,setCustConcerns] = useState("")
   const [errors,setErrors] = useState({})
   const [user, setUser] = useState({})
+  const [thank,setThank] = useState("")
 
   const form = useRef()
   const SERVICE_ID = 'service_lac4n1r'
@@ -76,6 +77,8 @@ const logout = (e)=>{
     axios.post("http://localhost:8000/api/feedbacks", feedback, {withCredentials:true})
     .then((feedback)=>{
       console.log(feedback)
+      navigate('/contact')
+      setThank("Thank you for your feedback!")
     })
     .catch((err)=>{
       setErrors(err.response.data.error.errors)
@@ -113,6 +116,7 @@ const logout = (e)=>{
             <p style={{wordWrap:'break-word'}}>Thank you for your interest in Yola! We value your input. Your engagement and feedback are invaluable to our growth. By telling us where you are from, we get an idea of where to supply Yola in the future. To all questions and comments, we're committed to responding promptly. Finally, please let us know how you heard of us!</p>
         </div>
         <form ref={form} className='contact-form' onSubmit={submitHandle}>
+        {thank ? <h4 style={{color: 'green'}}>{thank}</h4> : null}
           <div className='right-col'>
               <input
               placeholder='Name'
