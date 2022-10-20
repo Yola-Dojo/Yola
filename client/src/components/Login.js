@@ -47,7 +47,7 @@ const Login = (props) => {
     <div className='login-form'>
         <div>
             <h2>Login to Your Account</h2>
-            <p className='error-text'>{errorMessage ? errorMessage:""}</p>
+            <p className='error-text text-xs text-red-600'>{errorMessage ? errorMessage:""}</p>
             <form onSubmit={login}>
                 <div> 
                     <input
