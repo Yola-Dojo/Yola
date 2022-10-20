@@ -59,11 +59,11 @@ const Register = () => {
             <p style={{fontStyle:'italic', fontSize:'12px'}}>Please fill in this form to create an account</p>
         {confirmReg ? <h4 style={{color: 'green'}}>{confirmReg}</h4> : null}
         <form onSubmit={register}>
-            <p className="text-xs">{errors.firstName ? (<span className='error-text'>{errors.firstName.message}</span>) : null}</p>
-            <p className="text-xs">{errors.lastName ? (<span className='error-text'>{errors.lastName.message}</span>) : null}</p>
-            <p className="text-xs">{errors.email ? (<span className='error-text'>{errors.email.message}</span>) : null}</p>
-            <p className="text-xs">{errors.password ? (<span className='error-text'>{errors.password.message}</span>) : null}</p>
-            <p className="text-xs">{errors.confirmPassword ? (<span className='error-text'>{errors.confirmPassword.message}</span>) : null}</p>
+            <p className="text-xs text-red-600">{errors.firstName ? (<span className='error-text'>{errors.firstName.message}</span>) : null}</p>
+            <p className="text-xs text-red-600">{errors.lastName ? (<span className='error-text'>{errors.lastName.message}</span>) : null}</p>
+            <p className="text-xs text-red-600">{errors.email ? (<span className='error-text'>{errors.email.message}</span>) : null}</p>
+            <p className="text-xs text-red-600">{errors.password ? (<span className='error-text'>{errors.password.message}</span>) : null}</p>
+            <p className="text-xs text-red-600">{errors.confirmPassword ? (<span className='error-text'>{errors.confirmPassword.message}</span>) : null}</p>
             <div className='reg-top'>
                 <input
                 placeholder='First name'
@@ -118,7 +118,7 @@ const Register = () => {
 
             <button type='submit'>Sign Up</button>
         </form>
-        <p>Already have an account? <Link to = {'/login'}>Login here.</Link></p>
+        <p>Already have an account? <Link to = {'/login'} className="text-sky-500 underline">Login here.</Link></p>
         </div>
     </dialog>
   )
