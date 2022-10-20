@@ -61,24 +61,27 @@ return (
     <table className="table-1">
         <tbody >
             <tr>
-                <th className="text-indigo-600 text-lg" >PRODUCT NAME</th>
-                <th className="text-indigo-600 text-lg">PRODUCT PRICE</th>
-                <th className="text-indigo-600 text-lg">PRODUCT IMAGE</th>
-                <th className="text-indigo-600 text-lg">PRODUCT Quantity</th>
-                <th className="text-indigo-600 text-lg">ACTIONS</th>
+
+                <th className='text-3xl text-indigo-600'>NAME</th>
+                <th className='text-3xl text-indigo-600'>PRICE</th>
+                <th className='text-3xl text-indigo-600'>DETAILS</th>
+                <th className='text-3xl text-indigo-600'>QTY</th>
+                <th className='text-3xl text-indigo-600'>ACTIONS</th>
             </tr>
             {
                 loggedInUserOrders.map((item,idx1)=>(  
                     <tr key={idx1}>
-                        <td className="text-indigo-600 text-lg">{item.productName}</td>
-                        <td className="text-indigo-600">{item.productPrice}</td>
-                        <td className="text-indigo-600">{item.productDescription}</td>
-                        <td className="text-indigo-600">{item.productQuantity}</td>
-                        <td className="text-indigo-600">     
+
+                        <td className='text-3xl text-indigo-600'>{item.productName}</td>
+                        <td className='text-3xl text-indigo-600'>{item.productPrice}</td>
+                        <td className='text-3xl text-indigo-600'>{item.productDescription}</td>
+                        <td className='text-3xl text-indigo-600'>{item.productQuantity}</td>
+                        <td>     
                             <div className="card hover" style={{backgroundImage:`url(${item.productImg})`,backgroundSize:"cover"}}></div>
                         </td>
                         <td>
-                            <button className="px-8 py-4 rounded-md text-lg font-medium border focus:outline-none focus:ring transition text-purple-600 border-purple-600 hover:text-white hover:bg-purple-300 active:bg-purple-700 focus:ring-purple-300" onClick={()=>orderDeleteHandler(idx1,item._id)}>Delete</button>
+                            <button className=""px-8 py-4 rounded-md text-lg font-medium border focus:outline-none focus:ring transition text-purple-600 border-purple-600 hover:text-white hover:bg-purple-300 active:bg-purple-700 focus:ring-purple-300 text-3xl" onClick={()=>orderDeleteHandler(idx1,item._id)}>Delete</button>
+
                             {/* <button className="btn-2 formbtn" onClick={()=>navigate(`/admin/edit/${item._id}`) }>Edit</button>                                    */}
                         </td>
                     </tr>
@@ -87,11 +90,11 @@ return (
         </tbody>  
     </table>
     <aside className="aside">
-        <h2>Cart Items</h2>
+        <h2 className="text-2xl">Cart Items</h2>
         <div>
             {loggedInUserOrders.length === 0 && <div> Cart is Empty</div>}
             {loggedInUserOrders.map((item) =>
-            <div className="">
+            <div className="text-xl">
                 {item.productQuantity} x ${item.productPrice.toFixed(2)}
             </div>
 
