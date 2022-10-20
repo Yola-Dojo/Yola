@@ -303,7 +303,7 @@ table-1 tr td:first-child::before {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 100px;
+  margin-top: 20px;
 }
 
 .left-col { /* components/Contact.js*/
