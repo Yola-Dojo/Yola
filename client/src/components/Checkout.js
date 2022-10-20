@@ -61,24 +61,27 @@ return (
     <table className="table-1">
         <tbody >
             <tr>
-                <th className='text-3xl'>NAME</th>
-                <th className='text-3xl'>PRICE</th>
-                <th className='text-3xl'>DETAILS</th>
-                <th className='text-3xl'>QTY</th>
-                <th className='text-3xl'>ACTIONS</th>
+
+                <th className='text-3xl text-indigo-600'>NAME</th>
+                <th className='text-3xl text-indigo-600'>PRICE</th>
+                <th className='text-3xl text-indigo-600'>DETAILS</th>
+                <th className='text-3xl text-indigo-600'>QTY</th>
+                <th className='text-3xl text-indigo-600'>ACTIONS</th>
             </tr>
             {
                 loggedInUserOrders.map((item,idx1)=>(  
                     <tr key={idx1}>
-                        <td className='text-3xl'>{item.productName}</td>
-                        <td className='text-3xl'>{item.productPrice}</td>
-                        <td className='text-3xl'>{item.productDescription}</td>
-                        <td className='text-3xl'>{item.productQuantity}</td>
+
+                        <td className='text-3xl text-indigo-600'>{item.productName}</td>
+                        <td className='text-3xl text-indigo-600'>{item.productPrice}</td>
+                        <td className='text-3xl text-indigo-600'>{item.productDescription}</td>
+                        <td className='text-3xl text-indigo-600'>{item.productQuantity}</td>
                         <td>     
                             <div className="card hover" style={{backgroundImage:`url(${item.productImg})`,backgroundSize:"cover"}}></div>
                         </td>
                         <td>
-                            <button className="edit-page-btns btn-1 text-3xl" onClick={()=>orderDeleteHandler(idx1,item._id)}>Delete</button>
+                            <button className=""px-8 py-4 rounded-md text-lg font-medium border focus:outline-none focus:ring transition text-purple-600 border-purple-600 hover:text-white hover:bg-purple-300 active:bg-purple-700 focus:ring-purple-300 text-3xl" onClick={()=>orderDeleteHandler(idx1,item._id)}>Delete</button>
+
                             {/* <button className="btn-2 formbtn" onClick={()=>navigate(`/admin/edit/${item._id}`) }>Edit</button>                                    */}
                         </td>
                     </tr>
