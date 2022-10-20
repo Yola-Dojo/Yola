@@ -69,7 +69,7 @@ return (
                 {
                     products.map((item,idx1)=>( 
                     <div key={idx1}>
-                            <div className="card hover" style={{backgroundImage:`url(${item.productImg})`,backgroundSize:"cover"}}></div>
+                            <div className="card hover" style={{backgroundImage:`url(${item.productImg})`,backgroundSize:"contain", backgroundRepeat:'no-repeat', backgroundPositionX:"center"}}></div>
                             <div>
                                 <p>{item.productName} </p>
                                 <p>${item.productPrice}</p>

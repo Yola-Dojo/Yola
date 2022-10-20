@@ -88,7 +88,7 @@ return (
                                 <td>{item.productPrice}</td>
                                 <td>{item.productDescription}</td>
                                 <td>     
-                                    <div className="card hover" style={{backgroundImage:`url(${item.productImg})`,backgroundSize:"cover"}}></div>
+                                    <div className="card hover" style={{backgroundImage:`url(${item.productImg})`,backgroundSize:"contain", backgroundRepeat:'no-repeat', backgroundPositionX:"center"}}></div>
                                 </td>
                                 <td>
                                     <button className="edit-page-btns btn-1" onClick={()=>productDeleteHandler(idx1,item._id)}>Delete</button>
