@@ -65,40 +65,40 @@ const AddProduct = (props) => {
             </div>
         </div>
         <div className="container">
-        <p className="">Add A Product</p>
+        <p className="text-6xl">Add A Product</p>
         <br/>
             <form onSubmit={handleSubmit} className="formInputDiv">
             <div className="">
                     <div className="">
                     <div className="">
-                        <label className="">Product Name:
+                        <label className="text-black">Product Name:
                             {errors.productName ? <p>{errors.productName.message}</p>:null}
                             <input className="" type="text" onChange = {productNameHandler} name="" id=""  />
                         </label>
                     </div>
                     <div className="">
-                        <label className="">Product Price:
+                        <label className="text-black">Product Price:
                             {errors.productPrice ? <p>{errors.productPrice.message}</p>:null}
                             <input className=""  type="text" onChange = {productPriceHandler} name="" id=""  />
                         </label>
                     </div>
                     <div className="">   
-                        <label className="">Product Image:
+                        <label className="text-black">Product Image:
                             {errors.productImg ? <p>{errors.productImg.message}</p>:null}
                             <input className="" type="text" label="Type" onChange={ProductImgHandler}  />
                         </label>
                     </div>    
-                    <div className=""> 
-                        <label className="">Product Description:
+                    <div className="mt-10"> 
+                        <label className="text-black">Product Description:
                             {errors.productDescription ? <p>{errors.productDescription.message}</p>:null}
-                            <textarea className="" type="text" label="Type" onChange={productDescriptionHandelr} ></textarea>
+                            <textarea rows="5" className="rounded-lg border border-gray-300" type="text" label="Type" onChange={productDescriptionHandelr} ></textarea>
                         </label>
                     </div> 
                     </div>     
                 </div>    
                 <br/>
                 <div className="btndiv">
-                    <button onClick={handleSubmit} type="submit" className = "btn hover">Create</button>
+                    <button type="submit" onClick={handleSubmit} className="btn hover">Create</button>
                 </div>
             </form>
         </div>
@@ -108,3 +108,4 @@ const AddProduct = (props) => {
 }
 
 export default AddProduct
+

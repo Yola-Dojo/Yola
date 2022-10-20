@@ -13,7 +13,7 @@ const LandingPage = () => {
 
   return (
     <div>
-      <div id="carouselExampleCaptions" class="carousel slide relative w-2/3 mx-auto" data-bs-ride="carousel">
+      <div id="carouselExampleCaptions" class="carousel slide relative w-1/2 mx-auto" data-bs-ride="carousel">
         <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
           <button
             type="button"
