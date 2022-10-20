@@ -97,7 +97,8 @@ return (
 
         )}
             <p>{loggedInUserOrders.length} Products</p>
-            <p>Total: {totalPrice}</p>
+            <p>Total: ${totalPrice.toFixed(2)}</p>
+            <button style={{backgroundColor:'black', color: 'white', padding:'3px 5px', width:'100px'}}>Checkout</button>
         </div>
     </aside>
 

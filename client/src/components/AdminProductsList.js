@@ -22,7 +22,7 @@ const AdminProductsList = (props) => {
     
 
     useEffect(()=>{
-        !user && navigate("/login")
+        // !user && navigate("/login")
         axios.get('http://localhost:8000/api/products',{withCredentials:true})
         .then((res)=>{
             console.log(res.data.products)
@@ -35,7 +35,7 @@ const AdminProductsList = (props) => {
     },[productList])
 
     useEffect(()=>{
-        !user && navigate("/login")
+        // !user && navigate("/login")
         axios.get('http://localhost:8000/api/users/getAllUsers',{withCredentials:true})
         .then((res)=>{
             console.log(res.data.users)
