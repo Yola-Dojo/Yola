@@ -61,24 +61,24 @@ return (
     <table className="table-1">
         <tbody >
             <tr>
-                <th>PRODUCT NAME</th>
-                <th>PRODUCT PRICE</th>
-                <th>PRODUCT IMAGE</th>
-                <th>PRODUCT Quantity</th>
-                <th>ACTIONS</th>
+                <th className='text-3xl'>NAME</th>
+                <th className='text-3xl'>PRICE</th>
+                <th className='text-3xl'>DETAILS</th>
+                <th className='text-3xl'>QTY</th>
+                <th className='text-3xl'>ACTIONS</th>
             </tr>
             {
                 loggedInUserOrders.map((item,idx1)=>(  
                     <tr key={idx1}>
-                        <td>{item.productName}</td>
-                        <td>{item.productPrice}</td>
-                        <td>{item.productDescription}</td>
-                        <td>{item.productQuantity}</td>
+                        <td className='text-3xl'>{item.productName}</td>
+                        <td className='text-3xl'>{item.productPrice}</td>
+                        <td className='text-3xl'>{item.productDescription}</td>
+                        <td className='text-3xl'>{item.productQuantity}</td>
                         <td>     
                             <div className="card hover" style={{backgroundImage:`url(${item.productImg})`,backgroundSize:"cover"}}></div>
                         </td>
                         <td>
-                            <button className="edit-page-btns btn-1" onClick={()=>orderDeleteHandler(idx1,item._id)}>Delete</button>
+                            <button className="edit-page-btns btn-1 text-3xl" onClick={()=>orderDeleteHandler(idx1,item._id)}>Delete</button>
                             {/* <button className="btn-2 formbtn" onClick={()=>navigate(`/admin/edit/${item._id}`) }>Edit</button>                                    */}
                         </td>
                     </tr>
@@ -87,11 +87,11 @@ return (
         </tbody>  
     </table>
     <aside className="aside">
-        <h2>Cart Items</h2>
+        <h2 className="text-2xl">Cart Items</h2>
         <div>
             {loggedInUserOrders.length === 0 && <div> Cart is Empty</div>}
             {loggedInUserOrders.map((item) =>
-            <div className="">
+            <div className="text-xl">
                 {item.productQuantity} x ${item.productPrice.toFixed(2)}
             </div>
 
