@@ -59,7 +59,11 @@ const Register = () => {
             <p style={{fontStyle:'italic', fontSize:'12px'}}>Please fill in this form to create an account</p>
         {confirmReg ? <h4 style={{color: 'green'}}>{confirmReg}</h4> : null}
         <form onSubmit={register}>
-            {errors.firstName ? (<span className='error-text'>{errors.firstName.message}</span>) : null}
+            <p className="text-xs">{errors.firstName ? (<span className='error-text'>{errors.firstName.message}</span>) : null}</p>
+            <p className="text-xs">{errors.lastName ? (<span className='error-text'>{errors.lastName.message}</span>) : null}</p>
+            <p className="text-xs">{errors.email ? (<span className='error-text'>{errors.email.message}</span>) : null}</p>
+            <p className="text-xs">{errors.password ? (<span className='error-text'>{errors.password.message}</span>) : null}</p>
+            <p className="text-xs">{errors.confirmPassword ? (<span className='error-text'>{errors.confirmPassword.message}</span>) : null}</p>
             <div className='reg-top'>
                 <input
                 placeholder='First name'
@@ -69,7 +73,6 @@ const Register = () => {
                 onChange={(e)=> handleChange(e)}
                 />
 
-                {errors.lastName ? (<span className='error-text'>{errors.lastName.message}</span>) : null}
                 <input
                 placeholder='Last Name'
                 type='text'
@@ -88,7 +91,6 @@ const Register = () => {
                 onChange={(e)=> handleChange(e)}
                 />
 
-                {errors.email ? (<span className='error-text'>{errors.email.message}</span>) : null}
                 <input
                 placeholder='Email Address'
                 type='email'
@@ -97,7 +99,6 @@ const Register = () => {
                 onChange={(e)=> handleChange(e)}
                 />
 
-                {errors.password ? (<span className='error-text'>{errors.password.message}</span>) : null}
                 <input
                 placeholder='Password'
                 type='password'
@@ -106,7 +107,6 @@ const Register = () => {
                 onChange={(e)=> handleChange(e)}
                 />
 
-                {errors.confirmPassword ? (<span className='error-text'>{errors.confirmPassword.message}</span>) : null}
                 <input
                 placeholder='Confirm Password'
                 type='password'

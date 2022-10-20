@@ -277,7 +277,7 @@ table-1 tr td:first-child::before {
 }
 .card{
   border-radius:5px;
-  height:100px;
+  height:200px;
   width:150px;
   text-align:center;
   margin:10px;
@@ -290,7 +290,7 @@ table-1 tr td:first-child::before {
 }
 .card:hover{
   box-shadow:0px 2px 7px white, 0px 4px 9px rgb(128, 128, 128);
-
+  height: 400px;
 }
 .products-div {
   display: flex;
