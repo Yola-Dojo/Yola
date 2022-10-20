@@ -80,7 +80,7 @@ return (
                             <div className="card hover" style={{backgroundImage:`url(${item.productImg})`,backgroundSize:"cover"}}></div>
                         </td>
                         <td>
-                            <button className=""px-8 py-4 rounded-md text-lg font-medium border focus:outline-none focus:ring transition text-purple-600 border-purple-600 hover:text-white hover:bg-purple-300 active:bg-purple-700 focus:ring-purple-300 text-3xl" onClick={()=>orderDeleteHandler(idx1,item._id)}>Delete</button>
+                            <button className="px-8 py-4 rounded-md text-lg font-medium border focus:outline-none focus:ring transition text-purple-600 border-purple-600 hover:text-white hover:bg-purple-300 active:bg-purple-700 focus:ring-purple-300 text-3xl" onClick={()=>orderDeleteHandler(idx1,item._id)}>Delete</button>
 
                             {/* <button className="btn-2 formbtn" onClick={()=>navigate(`/admin/edit/${item._id}`) }>Edit</button>                                    */}
                         </td>
